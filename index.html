@@ -1,0 +1,37 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#050b1f" />
+  <meta name="description" content="Gomarix — We build websites, full-stack applications, SaaS products, and AI automation for businesses. Schools, clinics, startups and more." />
+  <meta property="og:title" content="Gomarix — Websites, Apps, SaaS & Automation for your business" />
+  <meta property="og:description" content="Professional websites, custom web applications, SaaS products, and business automation. From idea to launch." />
+  <meta property="og:type" content="website" />
+
+  <title>Gomarix — Websites, Apps, SaaS & Business Automation</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Manrope:wght@500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+
+  <link rel="icon" type="image/png" href="/gomarix_logo.png" />
+
+  <script>
+    // Prevent flash of wrong theme
+    (function() {
+      try {
+        var stored = localStorage.getItem('gomarix-theme');
+        var theme = stored || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <div class="bg-fx"><div class="bg-grid"></div></div>
+  <div id="root" class="wrap"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+</html>
