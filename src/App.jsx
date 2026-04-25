@@ -776,6 +776,39 @@ const TESTIMONIALS = [
   { q:"Walk-ins are great, but online booking changed our business. We are fully booked 5 days in advance now, and clients love getting WhatsApp reminders.", n:"Pooja Tiwari", r:"Owner, Glow & Style Beauty Parlour", a:"PT" },
 ];
 
+/* Industry icons used in the "Trusted by" strip */
+const INDUSTRIES = [
+  { name: 'Schools & Colleges', svg: <path d="M22 10 12 4 2 10l10 6 10-6Z M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5 M22 10v6"/> },
+  { name: 'Clinics & Hospitals', svg: <g><path d="M3 7h18v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M12 11v6 M9 14h6"/></g> },
+  { name: 'Restaurants & Cafés', svg: <g><path d="M6 3v8a3 3 0 0 0 6 0V3 M9 11v10 M16 3v18 M16 13c2 0 4-2 4-5V3"/></g> },
+  { name: 'Hotels & Stays', svg: <g><path d="M3 21V8l9-5 9 5v13"/><path d="M9 21v-7h6v7 M9 11h6"/></g> },
+  { name: 'E-commerce & Retail', svg: <g><path d="M5 7h14l-1 13H6Z M9 7V5a3 3 0 0 1 6 0v2"/></g> },
+  { name: 'Logistics', svg: <g><path d="M2 16V7a1 1 0 0 1 1-1h11v10 M14 8h5l3 4v4h-2"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></g> },
+  { name: 'Real Estate', svg: <g><path d="M3 21V8l5-3 5 3v13M13 21V11l4-2 4 2v10 M3 21h18 M7 12h2 M7 16h2 M16 14h2 M16 18h2"/></g> },
+  { name: 'Finance & CA', svg: <g><path d="M14 4h-7 M14 8h-7 M14 14H6 M11 18H6 M14 4l3 6.5L14 17l-3-6.5z" strokeLinejoin="round"/></g> },
+  { name: 'Fitness & Gym', svg: <g><path d="M6 7v10 M18 7v10 M2 10v4 M22 10v4 M6 12h12"/></g> },
+  { name: 'NGOs & Causes', svg: <path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10Z"/> },
+  { name: 'Manufacturing', svg: <g><path d="M3 21V11l5 3V11l5 3V8l8 5v8Z M7 21v-4 M11 21v-4 M15 21v-4"/></g> },
+  { name: 'Salons & Beauty', svg: <g><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M9 9l11 11 M9 15L20 4"/></g> },
+];
+
+const IndustriesStrip = () => (
+  <div className="industries-strip reveal">
+    <div className="industries-grid">
+      {INDUSTRIES.map((it, i) => (
+        <div className="industry-chip" key={it.name} style={{ '--i': i }}>
+          <span className="industry-icon">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+              {it.svg}
+            </svg>
+          </span>
+          <span className="industry-label">{it.name}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+);
+
 const Testimonials = () => {
   const trackRef = useRef(null);
   const [paused, setPaused] = useState(false);
@@ -791,6 +824,8 @@ const Testimonials = () => {
           <h2>Trusted by businesses across industries</h2>
           <p>From schools to clinics to restaurant chains — hear what our clients have to say.</p>
         </div>
+
+        <IndustriesStrip />
 
         <div
           className={`tcarousel ${paused ? 'paused' : ''}`}
