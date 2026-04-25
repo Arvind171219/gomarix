@@ -289,7 +289,7 @@ const DashboardMock = () => (
   <div className="dash reveal">
     <div className="dash-top">
       <div className="dots"><span/><span/><span/></div>
-      <span className="url">gomarix.ai/projects</span>
+      <span className="url">gomarix.in/projects</span>
     </div>
     <div className="dash-row">
       {[
@@ -498,35 +498,35 @@ const PROCESS_STEPS = [
     n: '01',
     icon: 'message',
     h: 'Discover',
-    p: 'Free 30-min call to understand your goals, audience, and budget. We share a fixed quote within 24 hours.',
+    p: 'Free 30-min call to understand your goals. You get a fixed quote and clear timeline within 24 hours.',
     duration: 'Day 1',
   },
   {
     n: '02',
     icon: 'pencil',
     h: 'Design',
-    p: 'We create wireframes and a high-fidelity design prototype. You review and approve before we write any code.',
-    duration: 'Week 1',
+    p: 'We create the design and share a clickable preview. You review and approve before any code is written.',
+    duration: 'Day 2-3',
   },
   {
     n: '03',
     icon: 'code',
     h: 'Build',
-    p: 'Our team develops your project with weekly demos. You get a live staging URL to test anytime.',
-    duration: 'Weeks 2-6',
+    p: 'Our team develops your project with daily progress updates. You get a live staging URL to test anytime.',
+    duration: 'Day 3-6',
   },
   {
     n: '04',
     icon: 'bolt',
     h: 'Launch',
-    p: 'We deploy to production, set up analytics, and train your team. You go live with confidence.',
-    duration: 'Final week',
+    p: 'We deploy to production, set up analytics, and hand over the keys. You go live with confidence.',
+    duration: 'Day 7',
   },
   {
     n: '05',
     icon: 'sparkle',
     h: 'Grow',
-    p: 'Ongoing support, updates, and optimization. We become your long-term technology partner.',
+    p: 'Free post-launch support, updates, and optimization. We become your long-term technology partner.',
     duration: 'Ongoing',
   },
 ];
@@ -536,8 +536,15 @@ const HowItWorks = () => (
     <div className="container">
       <div className="section-head reveal">
         <div className="kicker">Our Process</div>
-        <h2>From idea to launch in 5 simple steps</h2>
-        <p>Transparent process. Fixed timeline. No surprises.</p>
+        <h2>From idea to launch in <span className="accent">7 days</span></h2>
+        <p>Fixed timeline. Daily updates. We deliver when we promise — or your money back.</p>
+        <div className="speed-badge reveal">
+          <span className="speed-icon" aria-hidden="true">⚡</span>
+          <div>
+            <b>Most websites delivered in 7 days</b>
+            <small>Web apps &amp; SaaS may take 2-8 weeks — full timeline shared with quote</small>
+          </div>
+        </div>
       </div>
 
       <div className="timeline reveal">
@@ -912,14 +919,14 @@ const ContactForm = ({ compact = false, defaultInterest = 'getstarted', onDone }
           company: form.company || '—',
           interest: form.interest,
           message: form.message,
-          source: 'gomarix.ai contact form',
+          source: 'gomarix.in contact form',
         }),
       });
       if (!res.ok) throw new Error('Submission failed');
       setDone(true);
       if (onDone) onDone(form);
     } catch (err) {
-      setErrs({ message: 'Could not send right now. Please WhatsApp us at +91 93070 14584 or email hello@gomarix.ai.' });
+      setErrs({ message: 'Could not send right now. Please WhatsApp us at +91 93070 14584 or email hello@gomarix.in.' });
     } finally {
       setBusy(false);
     }
@@ -1028,25 +1035,25 @@ const ContactSection = () => (
               <span className="val">+91 93070 14584</span>
             </span>
           </a>
-          <a className="contact-channel" href="mailto:hello@gomarix.ai">
+          <a className="contact-channel" href="mailto:hello@gomarix.in">
             <span className="ico"><Icon name="sparkle" size={18}/></span>
             <span>
               <span className="lbl">General</span>
-              <span className="val">hello@gomarix.ai</span>
+              <span className="val">hello@gomarix.in</span>
             </span>
           </a>
-          <a className="contact-channel" href="mailto:sales@gomarix.ai">
+          <a className="contact-channel" href="mailto:sales@gomarix.in">
             <span className="ico"><Icon name="chart" size={18}/></span>
             <span>
               <span className="lbl">Sales</span>
-              <span className="val">sales@gomarix.ai</span>
+              <span className="val">sales@gomarix.in</span>
             </span>
           </a>
-          <a className="contact-channel" href="mailto:support@gomarix.ai">
+          <a className="contact-channel" href="mailto:support@gomarix.in">
             <span className="ico"><Icon name="shield" size={18}/></span>
             <span>
               <span className="lbl">Support</span>
-              <span className="val">support@gomarix.ai</span>
+              <span className="val">support@gomarix.in</span>
             </span>
           </a>
           <div className="contact-channel" style={{ cursor: 'default' }}>
@@ -1514,7 +1521,7 @@ const SchedulerModal = ({ onClose }) => {
           timezone: tz,
           meetingLink: meetUrl,
           notes: form.notes || '—',
-          source: 'gomarix.ai scheduler',
+          source: 'gomarix.in scheduler',
         }),
       });
       setStep(3);
@@ -1576,7 +1583,7 @@ const SchedulerModal = ({ onClose }) => {
     const end = new Date(start); end.setMinutes(end.getMinutes() + 30);
     const fmt = (d) => d.toISOString().replace(/[-:]/g,'').replace(/\.\d{3}/,'');
     const escape = (s) => String(s).replace(/\\/g, '\\\\').replace(/,/g, '\\,').replace(/;/g, '\\;').replace(/\n/g, '\\n');
-    const uid = `${meetRoom}@gomarix.ai`;
+    const uid = `${meetRoom}@gomarix.in`;
     const ics = [
       'BEGIN:VCALENDAR',
       'VERSION:2.0',
@@ -2084,6 +2091,36 @@ const WhatsAppWidget = () => {
 /* =========================
    Footer
    ========================= */
+/* =========================
+   Sticky mobile CTA bar
+   ========================= */
+const MobileCTABar = () => {
+  const goContact = (e) => {
+    e.preventDefault();
+    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+  };
+  const waMsg = encodeURIComponent("Hi Gomarix! I'd like to know more about your services.");
+  return (
+    <nav className="mobile-cta" aria-label="Quick contact">
+      <a href="tel:+919307014584" className="mobile-cta-call" aria-label="Call Gomarix">
+        📞 Call
+      </a>
+      <a
+        href={`https://wa.me/919307014584?text=${waMsg}`}
+        target="_blank"
+        rel="noreferrer noopener"
+        className="mobile-cta-wa"
+        aria-label="WhatsApp Gomarix"
+      >
+        💬 WhatsApp
+      </a>
+      <a href="#contact" className="mobile-cta-quote" onClick={goContact}>
+        ✨ Get Quote
+      </a>
+    </nav>
+  );
+};
+
 const Footer = () => {
   const [email, setEmail] = useState('');
   const [done, setDone] = useState(false);
@@ -2101,7 +2138,7 @@ const Footer = () => {
           _template: 'table',
           _captcha: 'false',
           email,
-          source: 'gomarix.ai footer newsletter',
+          source: 'gomarix.in footer newsletter',
         }),
       });
       setDone(true); setEmail('');
@@ -2259,6 +2296,7 @@ const App = () => {
         <ContactSection />
       </main>
       <Footer />
+      <MobileCTABar />
       {showWA && <WhatsAppWidget />}
       {modal     && <ContactModal mode={modal.mode} planName={modal.planName} onClose={closeModal}/>}
       {authTab   && <AuthModal tab={authTab} onClose={closeAuth}/>}
