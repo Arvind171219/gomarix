@@ -1767,15 +1767,105 @@ footer {
   margin-bottom: 12px;
   transition: border-color .25s, background .25s, transform .25s;
 }
-.contact-channel:hover { border-color: var(--border-strong); background: var(--surface-2); transform: translateY(-2px); }
-.contact-channel .ico {
-  width: 42px; height: 42px; border-radius: 11px;
-  background: var(--accent-soft); color: var(--accent-2);
-  display: grid; place-items: center; flex-shrink: 0;
-  border: 1px solid rgba(91,140,255,0.25);
+.contact-channel:hover {
+  border-color: var(--border-strong);
+  background: var(--surface-2);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px -12px rgba(91, 140, 255, 0.4);
 }
-.contact-channel .lbl { font-size: 12px; color: var(--text-mute); text-transform: uppercase; letter-spacing: .08em; }
-.contact-channel .val { font-size: 15px; font-weight: 600; margin-top: 2px; }
+.contact-channel:hover .ch-arrow { transform: translateX(4px); opacity: 1; }
+.contact-channel .ico {
+  width: 44px; height: 44px; border-radius: 12px;
+  background: linear-gradient(135deg, rgba(91,140,255,0.18), rgba(122,91,255,0.12));
+  color: var(--accent-2);
+  display: grid; place-items: center; flex-shrink: 0;
+  border: 1px solid rgba(91,140,255,0.3);
+  transition: transform 0.3s var(--ease);
+}
+.contact-channel:hover .ico { transform: scale(1.08) rotate(-4deg); }
+.contact-channel .lbl {
+  font-family: 'Manrope', sans-serif;
+  font-size: 11px;
+  color: var(--accent-2);
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-weight: 700;
+}
+.contact-channel .val {
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 3px;
+  color: var(--text);
+}
+.contact-channel > span:nth-child(2) { flex: 1; min-width: 0; }
+.ch-arrow {
+  font-size: 20px;
+  color: var(--accent-2);
+  opacity: 0.5;
+  transition: transform 0.3s var(--ease), opacity 0.3s ease;
+  flex-shrink: 0;
+}
+
+/* WhatsApp variant — green branding */
+.contact-channel-wa {
+  background: linear-gradient(135deg, rgba(37, 211, 102, 0.06), rgba(18, 140, 126, 0.04));
+  border-color: rgba(37, 211, 102, 0.4);
+}
+.contact-channel-wa:hover {
+  background: linear-gradient(135deg, rgba(37, 211, 102, 0.1), rgba(18, 140, 126, 0.08));
+  border-color: rgba(37, 211, 102, 0.6);
+  box-shadow: 0 12px 32px -12px rgba(37, 211, 102, 0.5);
+}
+.contact-channel-wa .lbl { color: #7fe5a0; }
+.contact-channel-wa .ch-arrow { color: #25D366; }
+.ico-wa {
+  background: linear-gradient(135deg, rgba(37, 211, 102, 0.2), rgba(18, 140, 126, 0.1)) !important;
+  color: #25D366 !important;
+  border-color: rgba(37, 211, 102, 0.4) !important;
+}
+
+/* LinkedIn variant — blue branding */
+.contact-channel-li {
+  background: linear-gradient(135deg, rgba(10, 102, 194, 0.06), rgba(0, 119, 181, 0.03));
+  border-color: rgba(10, 102, 194, 0.35);
+}
+.contact-channel-li:hover {
+  background: linear-gradient(135deg, rgba(10, 102, 194, 0.1), rgba(0, 119, 181, 0.06));
+  border-color: rgba(10, 102, 194, 0.55);
+  box-shadow: 0 12px 32px -12px rgba(10, 102, 194, 0.5);
+}
+.contact-channel-li .lbl { color: #6ba9e3; }
+.contact-channel-li .ch-arrow { color: #0a66c2; }
+.ico-li {
+  background: linear-gradient(135deg, rgba(10, 102, 194, 0.2), rgba(0, 119, 181, 0.1)) !important;
+  color: #0a66c2 !important;
+  border-color: rgba(10, 102, 194, 0.4) !important;
+}
+
+/* Light mode tweaks for branded channels */
+:root[data-theme="light"] .contact-channel-wa {
+  background: linear-gradient(135deg, rgba(37, 211, 102, 0.05), rgba(18, 140, 126, 0.02)) !important;
+  border-color: rgba(37, 211, 102, 0.4) !important;
+}
+:root[data-theme="light"] .contact-channel-wa:hover {
+  background: linear-gradient(135deg, rgba(37, 211, 102, 0.1), rgba(18, 140, 126, 0.05)) !important;
+  border-color: rgba(37, 211, 102, 0.55) !important;
+  box-shadow: 0 4px 8px rgba(37, 211, 102, 0.08), 0 18px 36px -12px rgba(37, 211, 102, 0.3) !important;
+}
+:root[data-theme="light"] .contact-channel-wa .lbl { color: #0fa05a !important; }
+:root[data-theme="light"] .contact-channel-wa .ch-arrow { color: #0fa05a; }
+
+:root[data-theme="light"] .contact-channel-li {
+  background: linear-gradient(135deg, rgba(10, 102, 194, 0.04), rgba(0, 119, 181, 0.02)) !important;
+  border-color: rgba(10, 102, 194, 0.35) !important;
+}
+:root[data-theme="light"] .contact-channel-li:hover {
+  background: linear-gradient(135deg, rgba(10, 102, 194, 0.08), rgba(0, 119, 181, 0.04)) !important;
+  border-color: rgba(10, 102, 194, 0.55) !important;
+  box-shadow: 0 4px 8px rgba(10, 102, 194, 0.08), 0 18px 36px -12px rgba(10, 102, 194, 0.3) !important;
+}
+:root[data-theme="light"] .contact-channel-li .lbl { color: #0a66c2 !important; }
+:root[data-theme="light"] .contact-channel-li .ch-arrow { color: #0a66c2; }
 
 /* ===== Form ===== */
 .form-card {

@@ -270,7 +270,7 @@ const Hero = () => {
           </span>
         </span>
         <h1>
-          <span className="accent">7-day websites.</span> <span className="accent">7-week apps.</span> 7-figure businesses.
+          <span className="accent">Built fast.</span> <span className="accent">Built right.</span> Built to scale.
         </h1>
         <p className="lead">
           We help local shops, clinics, schools, and ambitious founders win more customers online.
@@ -1029,31 +1029,46 @@ const ContactSection = () => (
       <div className="contact-grid">
         <div className="contact-info reveal">
           <h3>Talk to a human</h3>
-          <p>Prefer email or a call? Use any of these channels — whichever suits you.</p>
+          <p>Pick the channel that suits you — we usually reply within minutes during business hours.</p>
 
           <a
-            className="contact-channel"
+            className="contact-channel contact-channel-wa"
             href={waLink("Hi Gomarix team! I'd like to learn more about your services. Can you help?")}
             target="_blank" rel="noreferrer noopener"
-            style={{ borderColor: 'rgba(37,211,102,0.35)', background: 'rgba(37,211,102,0.06)' }}
           >
-            <span className="ico" style={{ background: 'rgba(37,211,102,0.15)', color: '#25D366', borderColor: 'rgba(37,211,102,0.3)' }}>
-              <Icon name="whatsapp" size={18} stroke={0}/>
+            <span className="ico ico-wa">
+              <Icon name="whatsapp" size={20} stroke={0}/>
             </span>
             <span>
-              <span className="lbl" style={{ color: '#7fe5a0' }}>WhatsApp · Fastest reply</span>
-              <span className="val">+91 93070 14584</span>
+              <span className="lbl">WhatsApp · Fastest reply</span>
+              <span className="val">Tap to start a chat</span>
             </span>
+            <span className="ch-arrow" aria-hidden="true">→</span>
           </a>
           <a
             className="contact-channel"
             href="mailto:arvindkr40882@gmail.com?subject=Hi%20Gomarix%20%E2%80%94%20I%E2%80%99d%20like%20to%20know%20more&body=Hi%20Gomarix%20team%2C%0A%0AI%E2%80%99d%20like%20to%20know%20more%20about%20your%20services.%0A%0AMy%20requirements%3A%0A%0AThanks%21"
           >
-            <span className="ico"><Icon name="shield" size={18}/></span>
+            <span className="ico"><Icon name="message" size={20}/></span>
             <span>
               <span className="lbl">Email Support</span>
               <span className="val">Reply within 1 business day</span>
             </span>
+            <span className="ch-arrow" aria-hidden="true">→</span>
+          </a>
+          <a
+            className="contact-channel contact-channel-li"
+            href="https://www.linkedin.com/company/gomarix/"
+            target="_blank" rel="noreferrer noopener"
+          >
+            <span className="ico ico-li">
+              <Icon name="linkedin" size={20}/>
+            </span>
+            <span>
+              <span className="lbl">LinkedIn · Follow us</span>
+              <span className="val">linkedin.com/company/gomarix</span>
+            </span>
+            <span className="ch-arrow" aria-hidden="true">→</span>
           </a>
           <div className="contact-channel" style={{ cursor: 'default' }}>
             <span className="ico"><Icon name="target" size={18}/></span>
