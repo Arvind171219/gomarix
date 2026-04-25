@@ -250,13 +250,13 @@ const Hero = () => {
   <section className="hero" id="top">
     <div className="container hero-grid">
       <div className="reveal">
-        <span className="eyebrow"><span className="dot"/> SaaS · AI Automation · Apps · Websites</span>
+        <span className="eyebrow"><span className="dot"/> Websites · Automation · Smart Digital Solutions · Bihar, India</span>
         <h1>
-          We build digital products <span className="accent">that grow your business</span>
+          We help local businesses get <span className="accent">more customers, online</span>
         </h1>
         <p className="lead">
-          Custom SaaS products, AI-powered automation, full-stack web applications,
-          and professional business websites — Gomarix turns your ideas into production-ready software.
+          Websites, automation, and smart digital solutions — built for shops, clinics, schools,
+          and small businesses ready to grow. Fixed prices in INR, delivered on time.
         </p>
         <div className="hero-cta">
           <button type="button" className="btn btn-primary btn-lg" onClick={goContact}>Get a free quote <Icon name="arrow" size={16}/></button>
@@ -386,6 +386,35 @@ const TechStackIllustration = () => (
 );
 
 /* =========================
+   Trust badges strip
+   ========================= */
+const TRUST_BADGES = [
+  { icon: '🔒', label: 'SSL Secured',        sub: 'Encrypted by default' },
+  { icon: '⚡', label: 'On-Time Delivery',   sub: 'Or your money back' },
+  { icon: '📝', label: 'NDA-Friendly',       sub: 'Your idea stays safe' },
+  { icon: '💯', label: '100% Code Ownership', sub: 'No vendor lock-in' },
+  { icon: '🇮🇳', label: 'Made in India',     sub: 'Based in Bihar' },
+  { icon: '💬', label: 'Real Human Support', sub: 'WhatsApp · Email · Call' },
+];
+const TrustBadges = () => (
+  <section className="trust-strip">
+    <div className="container">
+      <div className="trust-row">
+        {TRUST_BADGES.map(b => (
+          <div className="trust-badge reveal" key={b.label}>
+            <span className="trust-icon" aria-hidden="true">{b.icon}</span>
+            <div className="trust-text">
+              <b>{b.label}</b>
+              <small>{b.sub}</small>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+/* =========================
    Feature Showcase (big cards)
    ========================= */
 const Showcase = () => (
@@ -512,12 +541,12 @@ const Pricing = () => {
   const { openContact } = useContact();
   const goContact = () => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
   const plans = [
-    { name:'Static Website', price: 199, blurb:'Perfect for small businesses and personal brands.',
-      features:['Responsive landing page','SEO optimization','Contact form integration','Mobile-friendly design','1 month free support'], cta:'Get a quote' },
-    { name:'Full-Stack App', price: 999, blurb:'Custom web applications for your business.',
-      features:['Custom UI/UX design','Database & backend','Admin dashboard','User authentication','Payment integration','3 months free support'], cta:'Get a quote', featured:true },
-    { name:'SaaS / Enterprise', price: null, blurb:'Custom SaaS products and large-scale solutions.',
-      features:['Everything in Full-Stack','Multi-tenant architecture','AI & automation features','API development','Dedicated project manager','Priority ongoing support'], cta:'Contact sales' },
+    { name:'Basic', price: 5999, blurb:'Perfect for local shops and personal brands getting online.',
+      features:['Up to 5-page responsive website','Mobile-friendly design','Basic SEO setup','Contact form + WhatsApp button','Google Maps integration','Free hosting setup help','1 month free support'], cta:'Get started' },
+    { name:'Standard', price: 12999, blurb:'For growing businesses that need more pages and features.',
+      features:['Up to 10-page custom website','Advanced SEO + Google Search setup','Blog / CMS so you can update yourself','Lead capture forms with email alerts','Google Analytics + Search Console','Speed & security optimization','3 months free support'], cta:'Get started', featured:true },
+    { name:'Premium', price: 24999, blurb:'Full web app with admin dashboard, payments, and automation.',
+      features:['Everything in Standard','Custom web app or booking system','Admin dashboard with user roles','Payment gateway integration','WhatsApp / SMS automation','AI chatbot or auto-replies','6 months priority support'], cta:'Get started' },
   ];
 
   return (
@@ -525,8 +554,8 @@ const Pricing = () => {
       <div className="container">
         <div className="section-head reveal">
           <div className="kicker">Pricing</div>
-          <h2>Transparent pricing for every need</h2>
-          <p>Choose the package that fits your project. Custom quotes available for complex builds.</p>
+          <h2>Honest, fixed pricing for every business</h2>
+          <p>No hidden fees. Pay-as-you-go milestones. Custom quotes available for complex builds.</p>
         </div>
 
         <div className="plans">
@@ -535,7 +564,7 @@ const Pricing = () => {
               {p.featured && <span className="tag">MOST POPULAR</span>}
               <div className="name">{p.name}</div>
               <div className="price">
-                {p.price === null ? 'Custom' : <>${p.price}<small> onwards</small></>}
+                {p.price === null ? 'Custom' : <>₹{p.price.toLocaleString('en-IN')}<small> /project</small></>}
               </div>
               <p className="blurb">{p.blurb}</p>
               <ul>
@@ -844,8 +873,8 @@ const ContactSection = () => (
           <div className="contact-channel" style={{ cursor: 'default' }}>
             <span className="ico"><Icon name="target" size={18}/></span>
             <span>
-              <span className="lbl">Headquarters</span>
-              <span className="val">Bengaluru · Remote-first</span>
+              <span className="lbl">Based in</span>
+              <span className="val">Bihar, India · Serving clients pan-India &amp; globally</span>
             </span>
           </div>
         </div>
@@ -1687,9 +1716,9 @@ Thanks!`,
 `Great question — transparent pricing is our thing.
 
 Quick overview:
-• *Static Website* — from $199 — perfect for small businesses
-• *Full-Stack App* — from $999 — custom applications
-• *SaaS / Enterprise* — custom quote — large-scale solutions
+• *Basic* — ₹5,999 — 5-page website, SEO, contact form
+• *Standard* — ₹12,999 — 10 pages, blog, advanced SEO, analytics
+• *Premium* — ₹24,999 — web app, admin panel, payments, automation
 
 I've drafted a pricing question for you below. Send it on WhatsApp and we'll reply with a custom quote 👇`,
     draft: (ctx) =>
@@ -2022,6 +2051,7 @@ const App = () => {
       <Navbar />
       <main>
         <Hero />
+        <TrustBadges />
         <Showcase />
         <MiniFeatures />
         <HowItWorks />
