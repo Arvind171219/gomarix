@@ -258,7 +258,17 @@ const Hero = () => {
   <section className="hero" id="top">
     <div className="container hero-grid">
       <div className="reveal">
-        <span className="eyebrow"><span className="dot"/> Websites · Apps · SaaS · AI Automation</span>
+        <span className="eyebrow eyebrow-rotator"><span className="dot"/>
+          <span className="eb-cycle">
+            <span className="eb-word">Websites</span>
+            <span className="eb-sep">·</span>
+            <span className="eb-word">Apps</span>
+            <span className="eb-sep">·</span>
+            <span className="eb-word">SaaS</span>
+            <span className="eb-sep">·</span>
+            <span className="eb-word">AI Automation</span>
+          </span>
+        </span>
         <h1>
           <span className="accent">7-day websites.</span> <span className="accent">7-week apps.</span> 7-figure businesses.
         </h1>
