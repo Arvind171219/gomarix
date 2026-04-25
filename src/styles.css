@@ -972,12 +972,12 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 
 .hero h1 {
   font-family: 'Manrope', sans-serif;
-  font-size: clamp(36px, 5.4vw, 64px);
-  line-height: 1.05;
+  font-size: clamp(34px, 5vw, 60px);
+  line-height: 1.08;
   letter-spacing: -0.035em;
   font-weight: 800;
   margin: 20px 0 22px;
-  max-width: 14ch;
+  max-width: 20ch;
   background: var(--grad-text);
   -webkit-background-clip: text;
           background-clip: text;
@@ -2142,6 +2142,47 @@ body.no-scroll { overflow: hidden; }
 .dd-item .tick  { margin-left: auto; color: var(--success); opacity: 0; }
 .dd-item.selected .tick { opacity: 1; }
 .dd-item.selected { background: rgba(34,211,154,0.06); }
+
+/* Light mode dropdown overrides */
+:root[data-theme="light"] .dd-trigger {
+  background: #ffffff;
+  border-color: var(--border);
+  color: var(--text);
+}
+:root[data-theme="light"] .dd-trigger:hover {
+  border-color: rgba(47, 95, 255, 0.4);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+}
+:root[data-theme="light"] .dd.open .dd-trigger {
+  border-color: var(--accent);
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(47, 95, 255, 0.15);
+}
+:root[data-theme="light"] .dd-trigger .bubble {
+  background: rgba(47, 95, 255, 0.1);
+  color: var(--accent);
+}
+:root[data-theme="light"] .dd-menu {
+  background: #ffffff;
+  border-color: rgba(15, 23, 42, 0.12);
+  box-shadow: 0 8px 24px -6px rgba(15, 23, 42, 0.18), 0 24px 60px -16px rgba(15, 23, 42, 0.2);
+}
+:root[data-theme="light"] .dd-item {
+  color: var(--text);
+}
+:root[data-theme="light"] .dd-item:hover,
+:root[data-theme="light"] .dd-item.hl {
+  background: rgba(47, 95, 255, 0.08);
+}
+:root[data-theme="light"] .dd-item .bubble {
+  background: rgba(47, 95, 255, 0.1);
+  color: var(--accent);
+}
+:root[data-theme="light"] .dd-item .label { color: var(--text); }
+:root[data-theme="light"] .dd-item .desc { color: var(--text-mute); }
+:root[data-theme="light"] .dd-item.selected {
+  background: rgba(15, 184, 138, 0.1);
+}
 
 /* Stepper (wizard) */
 .stepper {

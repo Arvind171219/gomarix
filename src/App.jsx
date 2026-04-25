@@ -258,13 +258,13 @@ const Hero = () => {
   <section className="hero" id="top">
     <div className="container hero-grid">
       <div className="reveal">
-        <span className="eyebrow"><span className="dot"/> Websites · Automation · Smart Digital Solutions · Bihar, India</span>
+        <span className="eyebrow"><span className="dot"/> Websites · Apps · SaaS · AI Automation</span>
         <h1>
-          We help local businesses get <span className="accent">more customers, online</span>
+          <span className="accent">7-day websites.</span> <span className="accent">7-week apps.</span> 7-figure businesses.
         </h1>
         <p className="lead">
-          Websites, automation, and smart digital solutions — built for shops, clinics, schools,
-          and small businesses ready to grow. Fixed prices in INR, delivered on time.
+          We help local shops, clinics, schools, and ambitious founders win more customers online.
+          Fixed prices, money-back guarantee, made in Bihar.
         </p>
         <div className="hero-cta">
           <button type="button" className="btn btn-primary btn-lg" onClick={goContact}>Get a free quote <Icon name="arrow" size={16}/></button>
@@ -631,7 +631,7 @@ const Stats = () => (
    Comparison Table — Gomarix vs Freelancer vs Big Agency
    ========================= */
 const COMPARE_ROWS = [
-  { feature: 'Starting price',          freelancer: '₹3K – ₹15K',     gomarix: '₹5,999 fixed', agency: '₹1L – ₹10L+' },
+  { feature: 'Starting price',          freelancer: '₹3K – ₹15K',     gomarix: '₹4,999 fixed', agency: '₹1L – ₹10L+' },
   { feature: 'Typical timeline',        freelancer: 'Often delayed',   gomarix: '1–8 weeks fixed', agency: '3–6 months' },
   { feature: 'Code ownership',          freelancer: 'Sometimes',       gomarix: '100% yours',      agency: 'Often locked-in' },
   { feature: 'Communication',           freelancer: 'Inconsistent',    gomarix: 'Daily WhatsApp',  agency: 'Account manager only' },
@@ -689,7 +689,7 @@ const Pricing = () => {
   const { openContact } = useContact();
   const goContact = () => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
   const plans = [
-    { name:'Basic', price: 5999, blurb:'Perfect for local shops and personal brands getting online.',
+    { name:'Basic', price: 4999, blurb:'Perfect for local shops and personal brands getting online.',
       features:['Up to 5-page responsive website','Mobile-friendly design','Basic SEO setup','Contact form + WhatsApp button','Google Maps integration','Free hosting setup help','1 month free support'], cta:'Get started' },
     { name:'Standard', price: 12999, blurb:'For growing businesses that need more pages and features.',
       features:['Up to 10-page custom website','Advanced SEO + Google Search setup','Blog / CMS so you can update yourself','Lead capture forms with email alerts','Google Analytics + Search Console','Speed & security optimization','3 months free support'], cta:'Get started', featured:true },
@@ -926,7 +926,7 @@ const ContactForm = ({ compact = false, defaultInterest = 'getstarted', onDone }
       setDone(true);
       if (onDone) onDone(form);
     } catch (err) {
-      setErrs({ message: 'Could not send right now. Please WhatsApp us at +91 93070 14584 or email hello@gomarix.in.' });
+      setErrs({ message: 'Could not send right now. Please WhatsApp us at +91 93070 14584 — fastest reply.' });
     } finally {
       setBusy(false);
     }
@@ -1023,7 +1023,7 @@ const ContactSection = () => (
 
           <a
             className="contact-channel"
-            href={waLink("Hi Gomarix team! I'd like to learn more about your platform. Can you help?")}
+            href={waLink("Hi Gomarix team! I'd like to learn more about your services. Can you help?")}
             target="_blank" rel="noreferrer noopener"
             style={{ borderColor: 'rgba(37,211,102,0.35)', background: 'rgba(37,211,102,0.06)' }}
           >
@@ -1031,29 +1031,18 @@ const ContactSection = () => (
               <Icon name="whatsapp" size={18} stroke={0}/>
             </span>
             <span>
-              <span className="lbl" style={{ color: '#7fe5a0' }}>WhatsApp · Fastest</span>
+              <span className="lbl" style={{ color: '#7fe5a0' }}>WhatsApp · Fastest reply</span>
               <span className="val">+91 93070 14584</span>
             </span>
           </a>
-          <a className="contact-channel" href="mailto:hello@gomarix.in">
-            <span className="ico"><Icon name="sparkle" size={18}/></span>
-            <span>
-              <span className="lbl">General</span>
-              <span className="val">hello@gomarix.in</span>
-            </span>
-          </a>
-          <a className="contact-channel" href="mailto:sales@gomarix.in">
-            <span className="ico"><Icon name="chart" size={18}/></span>
-            <span>
-              <span className="lbl">Sales</span>
-              <span className="val">sales@gomarix.in</span>
-            </span>
-          </a>
-          <a className="contact-channel" href="mailto:support@gomarix.in">
+          <a
+            className="contact-channel"
+            href="mailto:arvindkr40882@gmail.com?subject=Hi%20Gomarix%20%E2%80%94%20I%E2%80%99d%20like%20to%20know%20more&body=Hi%20Gomarix%20team%2C%0A%0AI%E2%80%99d%20like%20to%20know%20more%20about%20your%20services.%0A%0AMy%20requirements%3A%0A%0AThanks%21"
+          >
             <span className="ico"><Icon name="shield" size={18}/></span>
             <span>
-              <span className="lbl">Support</span>
-              <span className="val">support@gomarix.in</span>
+              <span className="lbl">Email Support</span>
+              <span className="val">Reply within 1 business day</span>
             </span>
           </a>
           <div className="contact-channel" style={{ cursor: 'default' }}>
@@ -1902,7 +1891,7 @@ Thanks!`,
 `Great question — transparent pricing is our thing.
 
 Quick overview:
-• *Basic* — ₹5,999 — 5-page website, SEO, contact form
+• *Basic* — ₹4,999 — 5-page website, SEO, contact form
 • *Standard* — ₹12,999 — 10 pages, blog, advanced SEO, analytics
 • *Premium* — ₹24,999 — web app, admin panel, payments, automation
 
