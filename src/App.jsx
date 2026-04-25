@@ -767,6 +767,13 @@ const TESTIMONIALS = [
   { q:"Affordable, professional, and on time. Our boutique website looks better than competitors who paid 10x more. Highly recommend.", n:"Anjali Verma", r:"Owner, Aanchal Boutique", a:"AV" },
   { q:"From scratch to launch in 6 weeks. The admin dashboard saves us hours every day. Best decision we made for our business.", n:"Rohit Gupta", r:"CEO, FreshMart Logistics", a:"RG" },
   { q:"They built our doctor consultation app with payment gateway and video calls. Patients across Bihar can now reach us. Truly impressed.", n:"Dr. Amit Kumar", r:"Founder, MediConsult", a:"AK" },
+  { q:"Our property listing website doubled enquiries in two months. Buyers can filter, schedule visits, and chat with us — all without us picking up the phone first.", n:"Manish Agarwal", r:"Owner, Prime Properties Patna", a:"MA" },
+  { q:"The online booking system saves us 3 hours daily on phone calls. Direct bookings up 45% — and we stopped paying 20% commission to OTAs.", n:"Sunita Kumari", r:"Manager, Hotel Suvidha Inn", a:"SU" },
+  { q:"Our client portal lets 200+ clients upload documents, track GST filings, and pay invoices online. What used to be email chaos is now organized.", n:"CA Manoj Verma", r:"Founder, Verma & Associates", a:"MV" },
+  { q:"Membership renewals, attendance, and class bookings — all on one app. We doubled member retention because reminders go out automatically.", n:"Karan Singh", r:"Owner, FitZone Gym Bhagalpur", a:"KS" },
+  { q:"We needed a donation page with UPI, cards, and transparency reports. Gomarix delivered something we are proud to share — donations are up 3x this year.", n:"Kavita Joshi", r:"Director, Bihar Rural Education Trust", a:"KJ" },
+  { q:"Wholesale buyers can now log in, see inventory, place bulk orders, and track shipments. Cut our order processing from 2 days to 2 hours.", n:"Suresh Yadav", r:"MD, Yadav Cottons Pvt Ltd", a:"SY" },
+  { q:"Walk-ins are great, but online booking changed our business. We are fully booked 5 days in advance now, and clients love getting WhatsApp reminders.", n:"Pooja Tiwari", r:"Owner, Glow & Style Beauty Parlour", a:"PT" },
 ];
 
 const Testimonials = () => {
