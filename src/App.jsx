@@ -207,7 +207,15 @@ const Navbar = () => {
           <a href="#top" className="brand">
             <span className="logo-wrap">
               <span className="logo-glow" aria-hidden="true"/>
-              <img src={logoUrl} alt="Gomarix" className="brand-logo" />
+              <img
+                src={logoUrl}
+                alt="Gomarix — Websites, Apps & Automation in Bihar, India"
+                className="brand-logo"
+                width="160"
+                height="40"
+                fetchpriority="high"
+                decoding="async"
+              />
               <span className="logo-orbit" aria-hidden="true"/>
               <span className="logo-spark" aria-hidden="true"/>
             </span>
@@ -558,6 +566,19 @@ const Pricing = () => {
           <p>No hidden fees. Pay-as-you-go milestones. Custom quotes available for complex builds.</p>
         </div>
 
+        <div className="guarantee-banner reveal">
+          <div className="guarantee-shield" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M12 2 4 5v6c0 5 3.5 9.5 8 11 4.5-1.5 8-6 8-11V5l-8-3z"/>
+              <path d="m9 12 2 2 4-4"/>
+            </svg>
+          </div>
+          <div className="guarantee-text">
+            <b>100% Money-Back Guarantee</b>
+            <span>If we miss the deadline or you are not happy with the design in the first 7 days, we refund your money. Your risk is zero.</span>
+          </div>
+        </div>
+
         <div className="plans">
           {plans.map(p => (
             <div className={`plan reveal ${p.featured ? 'featured' : ''}`} key={p.name}>
@@ -626,6 +647,7 @@ const Testimonials = () => (
    FAQ accordion
    ========================= */
 const FAQS = [
+  { q:'Do you offer a money-back guarantee?', a:'Yes — your risk is zero. If we miss our committed delivery date for any reason within our control, we refund your last milestone in full. If you are not satisfied with the design direction within the first 7 days of work, we issue a 100% refund minus any third-party costs (domain, hosting, paid plugins). We put it in writing in every contract.' },
   { q:'How long does a typical project take?', a:'Timelines vary by scope. A static business website usually takes 1-2 weeks. Full-stack web applications (school portal, clinic booking system, admin dashboard) take 4-8 weeks. Complex SaaS products or AI-powered platforms take 8-16 weeks. Once we understand your requirements, you get a detailed week-by-week timeline before we start — and we stick to it.' },
   { q:'How does pricing and payment work?', a:'We give you a fixed quote after a free consultation — no hidden fees, no surprise charges. For most projects, payment is split into milestones: 30% to start, 40% at mid-build review, and 30% on final delivery. For long-running SaaS builds, we offer monthly retainers. All quotes include revisions, testing, deployment, and documentation.' },
   { q:'What technologies do you use?', a:'We pick the best tool for each project. Frontend: React, Next.js, TypeScript, Tailwind. Backend: Node.js, Java/Spring Boot, Python (FastAPI/Django). Mobile: React Native. Databases: PostgreSQL, MongoDB, Redis. Cloud: AWS, Vercel, DigitalOcean. AI: OpenAI, Anthropic, LangChain, custom ML models. We are not locked to any one stack.' },
@@ -1941,7 +1963,15 @@ const Footer = () => {
           <div className="brand" style={{ marginBottom: 14 }}>
             <span className="logo-wrap logo-wrap-sm">
               <span className="logo-glow" aria-hidden="true"/>
-              <img src={logoUrl} alt="Gomarix" className="brand-logo" />
+              <img
+                src={logoUrl}
+                alt="Gomarix"
+                className="brand-logo"
+                width="128"
+                height="32"
+                loading="lazy"
+                decoding="async"
+              />
             </span>
           </div>
           <p style={{ color: 'var(--text-dim)', fontSize: 14, maxWidth: 320, margin:'0 0 20px' }}>
@@ -2029,6 +2059,14 @@ const App = () => {
   const [authTab, setAuthTab]   = useState(null); // 'signin' | 'signup' | 'magic'
   const [schedOpen, setSched]   = useState(false);
 
+  // Defer the WhatsApp widget so it doesn't block first paint
+  const [showWA, setShowWA] = useState(false);
+  useEffect(() => {
+    const idle = (cb) => (window.requestIdleCallback ? window.requestIdleCallback(cb, { timeout: 3000 }) : setTimeout(cb, 1500));
+    const handle = idle(() => setShowWA(true));
+    return () => { if (window.cancelIdleCallback && typeof handle === 'number') window.cancelIdleCallback(handle); };
+  }, []);
+
   const openContact = useCallback((mode = 'sales', planName = null) => setModal({ mode, planName }), []);
   const scrollToContact = useCallback(() => {
     const el = document.getElementById('contact');
@@ -2063,7 +2101,7 @@ const App = () => {
         <ContactSection />
       </main>
       <Footer />
-      <WhatsAppWidget />
+      {showWA && <WhatsAppWidget />}
       {modal     && <ContactModal mode={modal.mode} planName={modal.planName} onClose={closeModal}/>}
       {authTab   && <AuthModal tab={authTab} onClose={closeAuth}/>}
       {schedOpen && <SchedulerModal onClose={closeSched}/>}

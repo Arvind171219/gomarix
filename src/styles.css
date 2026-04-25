@@ -2773,6 +2773,58 @@ body.no-scroll { overflow: hidden; }
   }
 }
 
+/* ===== Money-back guarantee banner ===== */
+.guarantee-banner {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 0 auto 32px;
+  padding: 18px 24px;
+  max-width: 760px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(34, 211, 154, 0.12), rgba(91, 140, 255, 0.08));
+  border: 1px solid rgba(34, 211, 154, 0.35);
+  box-shadow: 0 6px 20px -8px rgba(34, 211, 154, 0.3);
+}
+.guarantee-shield {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: rgba(34, 211, 154, 0.15);
+  color: var(--success);
+  border: 1px solid rgba(34, 211, 154, 0.4);
+  animation: guaranteePulse 2.4s ease-in-out infinite;
+}
+@keyframes guaranteePulse {
+  0%, 100% { transform: scale(1);    box-shadow: 0 0 0 0 rgba(34, 211, 154, 0.4); }
+  50%      { transform: scale(1.04); box-shadow: 0 0 0 10px rgba(34, 211, 154, 0); }
+}
+.guarantee-text { display: flex; flex-direction: column; gap: 4px; }
+.guarantee-text b {
+  font-family: 'Manrope', sans-serif;
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.2px;
+}
+.guarantee-text span {
+  font-size: 13px;
+  color: var(--text-dim);
+  line-height: 1.5;
+}
+:root[data-theme="light"] .guarantee-banner {
+  background: linear-gradient(135deg, rgba(15, 184, 138, 0.1), rgba(47, 95, 255, 0.06));
+  border-color: rgba(15, 184, 138, 0.4);
+}
+@media (max-width: 540px) {
+  .guarantee-banner { flex-direction: column; text-align: center; padding: 20px; }
+  .guarantee-text { align-items: center; }
+}
+
 /* ===== Trust badges strip ===== */
 .trust-strip {
   padding: 28px 0;

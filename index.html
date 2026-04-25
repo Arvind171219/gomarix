@@ -12,7 +12,7 @@
   <meta name="author" content="Gomarix" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta name="googlebot" content="index, follow" />
-  <link rel="canonical" href="https://gomarix.vercel.app/" />
+  <link rel="canonical" href="https://www.gomarix.in/" />
 
   <!-- Geo / local SEO -->
   <meta name="geo.region" content="IN-BR" />
@@ -21,10 +21,10 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="en_IN" />
-  <meta property="og:url" content="https://gomarix.vercel.app/" />
+  <meta property="og:url" content="https://www.gomarix.in/" />
   <meta property="og:title" content="Gomarix — Websites, Apps & Automation from ₹5,999 | Bihar, India" />
   <meta property="og:description" content="We help local businesses get more customers through websites, automation, and smart digital solutions. Fixed-price packages from ₹5,999." />
-  <meta property="og:image" content="https://gomarix.vercel.app/gomarix_logo.png" />
+  <meta property="og:image" content="https://www.gomarix.in/gomarix_logo.png" />
   <meta property="og:image:alt" content="Gomarix logo" />
   <meta property="og:site_name" content="Gomarix" />
 
@@ -32,12 +32,15 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Gomarix — Websites, Apps & Automation from ₹5,999" />
   <meta name="twitter:description" content="Affordable websites, apps and automation for local businesses across Bihar and India." />
-  <meta name="twitter:image" content="https://gomarix.vercel.app/gomarix_logo.png" />
+  <meta name="twitter:image" content="https://www.gomarix.in/gomarix_logo.png" />
 
-  <!-- Fonts -->
+  <!-- Preload critical assets -->
+  <link rel="preload" as="image" href="/gomarix_logo.png" fetchpriority="high" />
+
+  <!-- Fonts (only load weights actually used to keep CSS small) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Manrope:wght@500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/gomarix_logo.png" />
@@ -49,10 +52,10 @@
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://gomarix.vercel.app/#organization",
+        "@id": "https://www.gomarix.in/#organization",
         "name": "Gomarix",
-        "url": "https://gomarix.vercel.app/",
-        "logo": "https://gomarix.vercel.app/gomarix_logo.png",
+        "url": "https://www.gomarix.in/",
+        "logo": "https://www.gomarix.in/gomarix_logo.png",
         "description": "Gomarix builds affordable websites, web applications, SaaS products, and AI-powered automation for local businesses across Bihar and India.",
         "address": {
           "@type": "PostalAddress",
@@ -70,10 +73,10 @@
       },
       {
         "@type": "LocalBusiness",
-        "@id": "https://gomarix.vercel.app/#localbusiness",
+        "@id": "https://www.gomarix.in/#localbusiness",
         "name": "Gomarix",
-        "image": "https://gomarix.vercel.app/gomarix_logo.png",
-        "url": "https://gomarix.vercel.app/",
+        "image": "https://www.gomarix.in/gomarix_logo.png",
+        "url": "https://www.gomarix.in/",
         "telephone": "+91-93070-14584",
         "priceRange": "₹₹",
         "address": {
@@ -94,16 +97,16 @@
       },
       {
         "@type": "WebSite",
-        "@id": "https://gomarix.vercel.app/#website",
-        "url": "https://gomarix.vercel.app/",
+        "@id": "https://www.gomarix.in/#website",
+        "url": "https://www.gomarix.in/",
         "name": "Gomarix",
-        "publisher": { "@id": "https://gomarix.vercel.app/#organization" },
+        "publisher": { "@id": "https://www.gomarix.in/#organization" },
         "inLanguage": "en-IN"
       },
       {
         "@type": "Service",
         "name": "Website Design & Development",
-        "provider": { "@id": "https://gomarix.vercel.app/#organization" },
+        "provider": { "@id": "https://www.gomarix.in/#organization" },
         "areaServed": { "@type": "Country", "name": "India" },
         "offers": {
           "@type": "AggregateOffer",
@@ -146,6 +149,14 @@
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Yes, 100%. Once final payment is made, all source code, designs, database schemas, and IP belong to you. You get the GitHub repo, deployment credentials, and full documentation."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you offer a money-back guarantee?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. If we miss our committed delivery date for reasons within our control, we refund your last milestone in full. If you're not satisfied with the design within the first 7 days, we issue a 100% refund minus any third-party costs (domain, hosting). Your risk is zero."
             }
           }
         ]
