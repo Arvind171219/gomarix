@@ -493,27 +493,70 @@ const MiniFeatures = () => (
 /* =========================
    How it works
    ========================= */
+const PROCESS_STEPS = [
+  {
+    n: '01',
+    icon: 'message',
+    h: 'Discover',
+    p: 'Free 30-min call to understand your goals, audience, and budget. We share a fixed quote within 24 hours.',
+    duration: 'Day 1',
+  },
+  {
+    n: '02',
+    icon: 'pencil',
+    h: 'Design',
+    p: 'We create wireframes and a high-fidelity design prototype. You review and approve before we write any code.',
+    duration: 'Week 1',
+  },
+  {
+    n: '03',
+    icon: 'code',
+    h: 'Build',
+    p: 'Our team develops your project with weekly demos. You get a live staging URL to test anytime.',
+    duration: 'Weeks 2-6',
+  },
+  {
+    n: '04',
+    icon: 'bolt',
+    h: 'Launch',
+    p: 'We deploy to production, set up analytics, and train your team. You go live with confidence.',
+    duration: 'Final week',
+  },
+  {
+    n: '05',
+    icon: 'sparkle',
+    h: 'Grow',
+    p: 'Ongoing support, updates, and optimization. We become your long-term technology partner.',
+    duration: 'Ongoing',
+  },
+];
+
 const HowItWorks = () => (
   <section className="block" id="services">
     <div className="container">
       <div className="section-head reveal">
-        <div className="kicker">How it works</div>
-        <h2>From idea to launch in three steps</h2>
-        <p>Simple, transparent process. No surprises, no hidden costs.</p>
+        <div className="kicker">Our Process</div>
+        <h2>From idea to launch in 5 simple steps</h2>
+        <p>Transparent process. Fixed timeline. No surprises.</p>
       </div>
 
-      <div className="steps">
-        {[
-          { n:'01', h:'Tell us what you need', p:'Share your requirements \u2014 a website, an app, automation, or a SaaS product. We will scope it out together.' },
-          { n:'02', h:'We design &amp; build', p:'Our team designs, develops, and tests your solution. You get regular updates and previews throughout.' },
-          { n:'03', h:'Launch &amp; grow', p:'We deploy your project, train your team, and provide ongoing support as your business scales.' },
-        ].map(s => (
-          <div className="step reveal" key={s.n}>
-            <span className="num">{s.n}</span>
-            <h4 dangerouslySetInnerHTML={{__html: s.h}}/>
-            <p dangerouslySetInnerHTML={{__html: s.p}}/>
-          </div>
-        ))}
+      <div className="timeline reveal">
+        <div className="timeline-track" aria-hidden="true">
+          <div className="timeline-fill"/>
+        </div>
+        <div className="timeline-steps">
+          {PROCESS_STEPS.map((s, i) => (
+            <div className="tl-step" key={s.n} style={{ '--i': i }}>
+              <div className="tl-bubble">
+                <Icon name={s.icon} size={22} stroke={2}/>
+              </div>
+              <div className="tl-num">{s.n}</div>
+              <h4 className="tl-title">{s.h}</h4>
+              <span className="tl-duration">{s.duration}</span>
+              <p className="tl-desc">{s.p}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   </section>
@@ -522,21 +565,111 @@ const HowItWorks = () => (
 /* =========================
    Stats band
    ========================= */
+/* Count-up hook — animates a number from 0 to target when its ref enters view */
+const useCountUp = (target, { duration = 1600, decimals = 0, suffix = '', start = false } = {}) => {
+  const [val, setVal] = useState(start ? target : 0);
+  useEffect(() => {
+    if (!start) return;
+    let raf;
+    const t0 = performance.now();
+    const step = (now) => {
+      const t = Math.min(1, (now - t0) / duration);
+      // ease-out cubic
+      const eased = 1 - Math.pow(1 - t, 3);
+      setVal(target * eased);
+      if (t < 1) raf = requestAnimationFrame(step);
+      else setVal(target);
+    };
+    raf = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(raf);
+  }, [target, duration, start]);
+  const formatted = decimals > 0 ? val.toFixed(decimals) : Math.floor(val).toLocaleString('en-IN');
+  return formatted + suffix;
+};
+
+const StatItem = ({ value, suffix = '+', decimals = 0, label }) => {
+  const ref = useRef(null);
+  const [inView, setInView] = useState(false);
+  useEffect(() => {
+    if (!ref.current) return;
+    const io = new IntersectionObserver(([e]) => {
+      if (e.isIntersecting) { setInView(true); io.disconnect(); }
+    }, { threshold: 0.3 });
+    io.observe(ref.current);
+    return () => io.disconnect();
+  }, []);
+  const display = useCountUp(value, { decimals, suffix, start: inView });
+  return (
+    <div className="reveal" ref={ref}>
+      <div className="k">{display}</div>
+      <div className="v">{label}</div>
+    </div>
+  );
+};
+
 const Stats = () => (
   <section className="stats-band">
     <div className="container">
       <div className="stats-grid">
-        {[
-          { k:'120+',   v:'Projects delivered' },
-          { k:'80+',    v:'Happy clients' },
-          { k:'15+',    v:'Industries served' },
-          { k:'99.9%',  v:'Client satisfaction' },
-        ].map(s => (
-          <div className="reveal" key={s.v}>
-            <div className="k">{s.k}</div>
-            <div className="v">{s.v}</div>
-          </div>
-        ))}
+        <StatItem value={120}  suffix="+" label="Projects delivered" />
+        <StatItem value={80}   suffix="+" label="Happy clients" />
+        <StatItem value={15}   suffix="+" label="Industries served" />
+        <StatItem value={99.9} suffix="%" decimals={1} label="Client satisfaction" />
+      </div>
+    </div>
+  </section>
+);
+
+/* =========================
+   Comparison Table — Gomarix vs Freelancer vs Big Agency
+   ========================= */
+const COMPARE_ROWS = [
+  { feature: 'Starting price',          freelancer: '₹3K – ₹15K',     gomarix: '₹5,999 fixed', agency: '₹1L – ₹10L+' },
+  { feature: 'Typical timeline',        freelancer: 'Often delayed',   gomarix: '1–8 weeks fixed', agency: '3–6 months' },
+  { feature: 'Code ownership',          freelancer: 'Sometimes',       gomarix: '100% yours',      agency: 'Often locked-in' },
+  { feature: 'Communication',           freelancer: 'Inconsistent',    gomarix: 'Daily WhatsApp',  agency: 'Account manager only' },
+  { feature: 'Money-back guarantee',    freelancer: false,             gomarix: true,              agency: false },
+  { feature: 'Post-launch support',     freelancer: 'Pay extra',       gomarix: '1–6 months free', agency: 'Expensive contract' },
+  { feature: 'Modern tech stack',       freelancer: 'Hit or miss',     gomarix: true,              agency: true },
+  { feature: 'Team disappears risk',    freelancer: 'High',            gomarix: 'No — full team',  agency: 'Low' },
+  { feature: 'Designed for Indian SMBs', freelancer: 'Sometimes',      gomarix: true,              agency: false },
+];
+
+const ComparisonTable = () => (
+  <section className="block compare-section" id="compare">
+    <div className="container">
+      <div className="section-head reveal">
+        <div className="kicker">Why Gomarix</div>
+        <h2>How we compare to other options</h2>
+        <p>Honest comparison — so you can make the right choice for your business.</p>
+      </div>
+
+      <div className="compare-wrap reveal">
+        <table className="compare-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th><span className="ct-col">Freelancer</span></th>
+              <th className="ct-featured-col">
+                <span className="ct-col ct-col-featured">
+                  <span className="ct-pill">⭐ Recommended</span>
+                  Gomarix
+                </span>
+              </th>
+              <th><span className="ct-col">Big Agency</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            {COMPARE_ROWS.map((r, i) => (
+              <tr key={r.feature}>
+                <th scope="row">{r.feature}</th>
+                <td>{r.freelancer === true ? <span className="ct-yes">✓</span> : r.freelancer === false ? <span className="ct-no">✕</span> : <span className="ct-text ct-text-muted">{r.freelancer}</span>}</td>
+                <td className="ct-featured-cell">{r.gomarix === true ? <span className="ct-yes ct-yes-featured">✓</span> : <span className="ct-text ct-text-strong">{r.gomarix}</span>}</td>
+                <td>{r.agency === true ? <span className="ct-yes">✓</span> : r.agency === false ? <span className="ct-no">✕</span> : <span className="ct-text ct-text-muted">{r.agency}</span>}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
@@ -612,36 +745,60 @@ const TESTIMONIALS = [
   { q:"Gomarix built our entire college management portal in just 4 weeks. Students and faculty love it. Truly professional team.", n:"Dr. Rajesh Mehta", r:"Principal, Delhi Public School", a:"RM" },
   { q:"Our clinic's appointment booking system has cut no-shows by 60%. Patients book online and get automatic reminders. Game changer.", n:"Dr. Sneha Kapoor", r:"Founder, LifeCare Clinic", a:"SK" },
   { q:"They delivered a stunning website and an admin dashboard for our restaurant chain. On time, on budget, and beyond expectations.", n:"Arjun Patel", r:"CEO, Spice Route Group", a:"AP" },
+  { q:"Our coaching institute now has online classes, fee management, and parent communication in one app. Enrollment doubled in 3 months.", n:"Priya Singh", r:"Director, BrightPath Academy", a:"PS" },
+  { q:"The AI chatbot handles 70% of our customer queries automatically. Our support team finally has time to focus on real problems.", n:"Vikram Sharma", r:"Founder, ShopSwift", a:"VS" },
+  { q:"Affordable, professional, and on time. Our boutique website looks better than competitors who paid 10x more. Highly recommend.", n:"Anjali Verma", r:"Owner, Aanchal Boutique", a:"AV" },
+  { q:"From scratch to launch in 6 weeks. The admin dashboard saves us hours every day. Best decision we made for our business.", n:"Rohit Gupta", r:"CEO, FreshMart Logistics", a:"RG" },
+  { q:"They built our doctor consultation app with payment gateway and video calls. Patients across Bihar can now reach us. Truly impressed.", n:"Dr. Amit Kumar", r:"Founder, MediConsult", a:"AK" },
 ];
-const Testimonials = () => (
-  <section className="block" id="customers">
-    <div className="container">
-      <div className="section-head reveal">
-        <div className="kicker">Portfolio</div>
-        <h2>Trusted by businesses across industries</h2>
-        <p>From schools to clinics to restaurant chains — hear what our clients have to say.</p>
-      </div>
 
-      <div className="quotes">
-        {TESTIMONIALS.map(t => (
-          <div className="quote reveal" key={t.n}>
-            <div className="stars">
-              {Array.from({length:5}).map((_,i) => <Icon key={i} name="star" size={16} stroke={0} fill="currentColor"/>)}
-            </div>
-            <blockquote>“{t.q}”</blockquote>
-            <div className="who">
-              <div className="avatar">{t.a}</div>
-              <div>
-                <div className="name">{t.n}</div>
-                <div className="role">{t.r}</div>
+const Testimonials = () => {
+  const trackRef = useRef(null);
+  const [paused, setPaused] = useState(false);
+
+  // Duplicate the list for seamless infinite scroll
+  const cards = [...TESTIMONIALS, ...TESTIMONIALS];
+
+  return (
+    <section className="block" id="customers">
+      <div className="container">
+        <div className="section-head reveal">
+          <div className="kicker">Portfolio</div>
+          <h2>Trusted by businesses across industries</h2>
+          <p>From schools to clinics to restaurant chains — hear what our clients have to say.</p>
+        </div>
+
+        <div
+          className={`tcarousel ${paused ? 'paused' : ''}`}
+          onMouseEnter={() => setPaused(true)}
+          onMouseLeave={() => setPaused(false)}
+          onTouchStart={() => setPaused(true)}
+          onTouchEnd={() => setPaused(false)}
+        >
+          <div className="tcarousel-track" ref={trackRef}>
+            {cards.map((t, i) => (
+              <div className="tcarousel-card" key={`${t.n}-${i}`}>
+                <div className="stars" aria-label="5 out of 5 stars">
+                  {Array.from({length:5}).map((_,j) => <Icon key={j} name="star" size={15} stroke={0} fill="currentColor"/>)}
+                </div>
+                <blockquote>"{t.q}"</blockquote>
+                <div className="who">
+                  <div className="avatar">{t.a}</div>
+                  <div>
+                    <div className="name">{t.n}</div>
+                    <div className="role">{t.r}</div>
+                  </div>
+                </div>
               </div>
-            </div>
+            ))}
           </div>
-        ))}
+          <div className="tcarousel-fade-l" aria-hidden="true"/>
+          <div className="tcarousel-fade-r" aria-hidden="true"/>
+        </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 /* =========================
    FAQ accordion
@@ -2095,6 +2252,7 @@ const App = () => {
         <HowItWorks />
         <Stats />
         <Pricing />
+        <ComparisonTable />
         <Testimonials />
         <FAQ />
         <BigCTA />
