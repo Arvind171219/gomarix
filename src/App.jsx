@@ -978,7 +978,7 @@ const ContactForm = ({ compact = false, defaultInterest = 'getstarted', onDone }
       setDone(true);
       if (onDone) onDone(form);
     } catch (err) {
-      setErrs({ message: 'Could not send right now. Please WhatsApp us at +91 93070 14584 — fastest reply.' });
+      setErrs({ message: 'Could not send right now. Please WhatsApp us at +91 87896 94039 — fastest reply.' });
     } finally {
       setBusy(false);
     }
@@ -1887,7 +1887,7 @@ Looking forward to our chat! 🚀`;
                 Send details on WhatsApp
               </button>
               <small style={{ display:'block', marginTop: 8, color:'var(--text-mute)', fontSize: 12 }}>
-                Shares booking + meeting link with <b style={{ color:'#7fe5a0' }}>+91 93070 14584</b>
+                Shares booking + meeting link with <b style={{ color:'#7fe5a0' }}>+91 87896 94039</b>
               </small>
 
               <div className="cal-buttons" style={{ marginTop: 14 }}>
@@ -1917,7 +1917,7 @@ Looking forward to our chat! 🚀`;
 /* =========================
    WhatsApp integration
    ========================= */
-const WHATSAPP_NUMBER = '919307014584'; // +91 93070 14584
+const WHATSAPP_NUMBER = '918789694039'; // +91 87896 94039
 const waLink = (msg) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
 const openWA = (msg) => window.open(waLink(msg), '_blank', 'noopener,noreferrer');
 
@@ -2062,7 +2062,7 @@ const WhatsAppWidget = () => {
     setMessages(m => [
       ...m,
       { from: 'user', text: draft, time: timeNow() },
-      { from: 'bot',  text: `✅ Sent! Your WhatsApp should have opened in a new tab.\n\nOur team will reply from *+91 93070 14584* shortly. You can close this chat — the conversation continues on WhatsApp.`, time: timeNow() },
+      { from: 'bot',  text: `✅ Sent! Your WhatsApp should have opened in a new tab.\n\nOur team will reply from *+91 87896 94039* shortly. You can close this chat — the conversation continues on WhatsApp.`, time: timeNow() },
     ]);
     setDraft('');
     setTopic(null);
@@ -2129,7 +2129,7 @@ const WhatsAppWidget = () => {
                 <Icon name="whatsapp" size={16} stroke={0}/> Send on WhatsApp
               </button>
               <small className="wa-hint">
-                Opens WhatsApp chat with <b>+91 93070 14584</b>
+                Opens WhatsApp chat with <b>+91 87896 94039</b>
                 <button
                   type="button"
                   onClick={reset}
@@ -2158,11 +2158,11 @@ const MobileCTABar = () => {
   const waMsg = encodeURIComponent("Hi Gomarix! I'd like to know more about your services.");
   return (
     <nav className="mobile-cta" aria-label="Quick contact">
-      <a href="tel:+919307014584" className="mobile-cta-call" aria-label="Call Gomarix">
+      <a href="tel:+918789694039" className="mobile-cta-call" aria-label="Call Gomarix">
         📞 Call
       </a>
       <a
-        href={`https://wa.me/919307014584?text=${waMsg}`}
+        href={`https://wa.me/918789694039?text=${waMsg}`}
         target="_blank"
         rel="noreferrer noopener"
         className="mobile-cta-wa"
