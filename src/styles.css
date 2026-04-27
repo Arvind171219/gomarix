@@ -216,53 +216,6 @@ body, .nav, .card, .mini, .plan, .quote, .step, .dash, .modal, .wa-panel,
   -webkit-text-fill-color: transparent;
 }
 
-/* ===== Gomarix logo ===== */
-.gomarix-logo {
-  display: block;
-  height: 36px;
-  width: auto;
-  transition: filter 0.3s ease, transform 0.3s var(--ease);
-}
-.gomarix-logo .omx-mark-group {
-  transform-origin: 24px 24px;
-  transition: transform 0.5s var(--ease);
-}
-.brand:hover .gomarix-logo .omx-mark-group {
-  transform: rotate(-8deg) scale(1.05);
-}
-.gomarix-logo .omx-orbit {
-  transform-origin: 24px 24px;
-  transform-box: fill-box;
-  animation: omxOrbit 8s linear infinite;
-}
-.gomarix-logo .omx-spark {
-  transform-origin: 35.5px 13.5px;
-  transform-box: fill-box;
-  animation: omxSparkPulse 2.6s ease-in-out infinite;
-}
-@keyframes omxOrbit {
-  from { stroke-dasharray: 0 72; stroke-dashoffset: 0; }
-  to   { stroke-dasharray: 72 0; stroke-dashoffset: -72; }
-}
-@keyframes omxSparkPulse {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50%      { transform: scale(1.15); opacity: 0.85; }
-}
-.brand:hover .gomarix-logo {
-  filter: drop-shadow(0 6px 18px rgba(91, 140, 255, 0.45));
-}
-/* Light-mode wordmark color */
-:root[data-theme="light"] .brand .gomarix-logo { color: #050e25; }
-/* Dark-mode wordmark color */
-:root[data-theme="dark"] .brand .gomarix-logo,
-.brand .gomarix-logo { color: var(--text); }
-
-/* Respect reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  .gomarix-logo .omx-orbit,
-  .gomarix-logo .omx-spark { animation: none; }
-}
-
 /* Light mode — richer hero + section polish */
 :root[data-theme="light"] .hero {
   background:
@@ -662,189 +615,6 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
   opacity: 1;
 }
 
-/* ===== Animated logo with decorative accents ===== */
-.logo-wrap {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px 14px;
-  isolation: isolate;
-  border-radius: 14px;
-  background: linear-gradient(135deg, rgba(91, 140, 255, 0.08), rgba(122, 91, 255, 0.06));
-  border: 1px solid rgba(91, 140, 255, 0.15);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  animation: logoEntrance 0.9s var(--ease) both;
-  transition: border-color 0.35s ease, background 0.35s ease, box-shadow 0.35s ease;
-}
-.logo-wrap:hover {
-  border-color: rgba(91, 140, 255, 0.45);
-  background: linear-gradient(135deg, rgba(91, 140, 255, 0.14), rgba(122, 91, 255, 0.1));
-  box-shadow: 0 8px 28px -10px rgba(91, 140, 255, 0.5), inset 0 1px 0 rgba(255,255,255,0.1);
-}
-.logo-wrap-sm {
-  padding: 5px 10px;
-  background: transparent;
-  border: none;
-  backdrop-filter: none;
-}
-.logo-wrap-sm:hover {
-  background: transparent;
-  box-shadow: none;
-  border-color: transparent;
-}
-:root[data-theme="light"] .logo-wrap {
-  background: linear-gradient(135deg, rgba(47, 95, 255, 0.06), rgba(122, 91, 255, 0.04));
-  border-color: rgba(47, 95, 255, 0.15);
-}
-:root[data-theme="light"] .logo-wrap:hover {
-  background: linear-gradient(135deg, rgba(47, 95, 255, 0.1), rgba(122, 91, 255, 0.08));
-  border-color: rgba(47, 95, 255, 0.4);
-  box-shadow: 0 6px 22px -8px rgba(47, 95, 255, 0.35);
-}
-
-/* Gradient glow halo that pulses */
-.logo-glow {
-  position: absolute;
-  inset: -6px;
-  z-index: -1;
-  border-radius: 16px;
-  background:
-    radial-gradient(circle at 30% 40%, rgba(91, 140, 255, 0.55) 0%, transparent 60%),
-    radial-gradient(circle at 70% 60%, rgba(165, 132, 255, 0.45) 0%, transparent 60%);
-  filter: blur(14px);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  animation: logoGlowPulse 4.2s ease-in-out infinite;
-}
-.brand:hover .logo-glow { opacity: 1; }
-@keyframes logoGlowPulse {
-  0%, 100% { transform: scale(1); filter: blur(14px); }
-  50%      { transform: scale(1.08); filter: blur(18px); }
-}
-
-/* Rotating orbital ring accent */
-.logo-orbit {
-  position: absolute;
-  inset: -8px;
-  border: 1.5px dashed rgba(91, 140, 255, 0.25);
-  border-radius: 18px;
-  pointer-events: none;
-  opacity: 0;
-  transform: scale(0.9);
-  transition: opacity 0.45s ease, transform 0.45s var(--ease);
-  animation: logoOrbit 14s linear infinite;
-}
-.brand:hover .logo-orbit {
-  opacity: 1;
-  transform: scale(1);
-}
-@keyframes logoOrbit {
-  from { background-position: 0 0;    border-color: rgba(91, 140, 255, 0.15); }
-  50%  { border-color: rgba(165, 132, 255, 0.4); }
-  to   { background-position: 100 0;  border-color: rgba(91, 140, 255, 0.15); }
-}
-
-/* Sparkle accent that pulses in top-right */
-.logo-spark {
-  position: absolute;
-  top: 2px;
-  right: 2px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: radial-gradient(circle, #ffffff 0%, #a584ff 60%, transparent 100%);
-  box-shadow: 0 0 12px rgba(165, 132, 255, 0.85);
-  animation: logoSpark 2.6s ease-in-out infinite;
-}
-@keyframes logoSpark {
-  0%, 100% { transform: scale(1);   opacity: 0.9; }
-  50%      { transform: scale(1.4); opacity: 0.4; }
-}
-
-/* Entrance animation on page load */
-@keyframes logoEntrance {
-  from { opacity: 0; transform: translateY(-6px) scale(0.9); filter: blur(4px); }
-  to   { opacity: 1; transform: translateY(0)    scale(1);   filter: blur(0); }
-}
-
-/* The PNG itself */
-.brand-logo {
-  height: 40px;
-  width: auto;
-  display: block;
-  object-fit: contain;
-  position: relative;
-  z-index: 1;
-  transition: transform .35s var(--ease), filter .35s var(--ease);
-  animation: logoBob 6s ease-in-out infinite;
-}
-@keyframes logoBob {
-  0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-3px); }
-}
-.brand:hover .brand-logo {
-  transform: scale(1.06) rotate(-2deg);
-  filter: drop-shadow(0 6px 16px rgba(91, 140, 255, 0.5));
-  animation-play-state: paused;
-}
-
-/* Shine sweep on hover */
-.logo-wrap::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -60%;
-  width: 60%;
-  height: 100%;
-  background: linear-gradient(
-    120deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.25) 50%,
-    transparent 100%
-  );
-  transform: skewX(-20deg);
-  opacity: 0;
-  pointer-events: none;
-  z-index: 2;
-}
-.brand:hover .logo-wrap::after {
-  animation: logoShine 0.9s ease-out;
-}
-@keyframes logoShine {
-  0%   { opacity: 0; left: -60%; }
-  40%  { opacity: 1; }
-  100% { opacity: 0; left: 120%; }
-}
-
-/* Light mode tweaks */
-:root[data-theme="light"] .logo-glow {
-  background:
-    radial-gradient(circle at 30% 40%, rgba(47, 95, 255, 0.4) 0%, transparent 60%),
-    radial-gradient(circle at 70% 60%, rgba(122, 91, 255, 0.32) 0%, transparent 60%);
-}
-:root[data-theme="light"] .logo-orbit {
-  border-color: rgba(47, 95, 255, 0.3);
-}
-:root[data-theme="light"] .logo-wrap::after {
-  background: linear-gradient(
-    120deg,
-    transparent 0%,
-    rgba(47, 95, 255, 0.2) 50%,
-    transparent 100%
-  );
-}
-
-/* Respect reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  .brand-logo,
-  .logo-glow,
-  .logo-spark,
-  .logo-orbit { animation: none !important; }
-  .logo-wrap { animation: none !important; }
-}
-
 /* Brand entrance animation */
 @keyframes brandSlideIn {
   from { opacity: 0; transform: translateX(-16px); }
@@ -852,19 +622,39 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 }
 .brand { animation: brandSlideIn .7s var(--ease) both; }
 
-/* === Brand lockup: logo + wordmark + tagline === */
-.brand-lockup { gap: 14px; }
+/* === Brand wordmark (text-only, no image) === */
+.brand-wordmark { gap: 12px; }
+.brand-dot {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--grad-primary);
+  box-shadow: 0 0 0 3px rgba(91,140,255,0.18), 0 0 18px rgba(91,140,255,0.55);
+  flex: none;
+}
+.brand-dot::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1px dashed rgba(91,140,255,0.35);
+  animation: brandDotOrbit 7s linear infinite;
+  opacity: 0.6;
+}
+.brand-wordmark:hover .brand-dot { box-shadow: 0 0 0 4px rgba(91,140,255,0.28), 0 0 24px rgba(165,132,255,0.7); }
+.brand-wordmark:hover .brand-dot::after { opacity: 1; }
+@keyframes brandDotOrbit {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
 .brand-text {
-  display: none;
+  display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 2px;
   line-height: 1;
-  padding-left: 14px;
-  border-left: 1px solid var(--border);
-  transition: border-color .35s var(--ease);
 }
-.brand-lockup:hover .brand-text { border-color: rgba(91,140,255,0.45); }
 .brand-name {
   font-family: 'Manrope', sans-serif;
   font-weight: 800;
@@ -878,36 +668,22 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
   animation: shine 7s linear infinite;
 }
 .brand-tag {
+  display: none;
   font-size: 10.5px;
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--text-mute);
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-.brand-tag::before {
-  content: '';
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--success);
-  box-shadow: 0 0 0 3px rgba(34,211,154,0.18);
-  flex: none;
 }
 :root[data-theme="light"] .brand-tag { color: #6c7a99; }
-@media (min-width: 760px) {
-  .brand-text { display: inline-flex; }
+@media (min-width: 600px) {
+  .brand-tag { display: inline; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .brand-dot::after { animation: none; }
+  .brand-name { animation: none; }
 }
 
-.brand-mark {
-  width: 34px; height: 34px;
-  border-radius: 10px;
-  background: var(--grad-primary);
-  display: grid; place-items: center;
-  box-shadow: 0 8px 24px -6px rgba(91,140,255,0.55);
-}
 .nav-links {
   display: flex;
   align-items: center;
@@ -4143,9 +3919,7 @@ body.no-scroll { overflow: hidden; }
 @media (max-width: 840px) {
   .nav-links, .nav-cta .btn-primary { display: none; }
   .menu-btn { display: inline-flex; }
-  .brand-logo { height: 34px; }
-  .logo-wrap { padding: 4px 6px; }
-  .logo-spark { width: 6px; height: 6px; top: 0; right: 0; }
+  .brand-name { font-size: 20px; }
   .hero { padding: 40px 0 80px; }
   section.block { padding: 80px 0; }
   .cta-card { padding: 40px 24px; }

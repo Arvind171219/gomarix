@@ -1,8 +1,6 @@
 import React, { useState, useEffect, useRef, useMemo, useContext, createContext, useCallback } from 'react';
 import { ThemeToggle } from './ThemeContext.jsx';
 
-const logoUrl = `${import.meta.env.BASE_URL}gomarix_logo.png`;
-
 /* =========================
    App context
    ========================= */
@@ -204,22 +202,9 @@ const Navbar = () => {
       </div>
       <header className={`nav ${scrolled ? 'scrolled' : ''}`}>
         <div className="container nav-inner">
-          <a href="#top" className="brand brand-lockup" aria-label="Gomarix — Software, AI & data platforms">
-            <span className="logo-wrap">
-              <span className="logo-glow" aria-hidden="true"/>
-              <img
-                src={logoUrl}
-                alt=""
-                className="brand-logo"
-                width="160"
-                height="40"
-                fetchpriority="high"
-                decoding="async"
-              />
-              <span className="logo-orbit" aria-hidden="true"/>
-              <span className="logo-spark" aria-hidden="true"/>
-            </span>
-            <span className="brand-text" aria-hidden="true">
+          <a href="#top" className="brand brand-wordmark" aria-label="Gomarix — Software, AI & data platforms">
+            <span className="brand-dot" aria-hidden="true"/>
+            <span className="brand-text">
               <span className="brand-name">Gomarix</span>
               <span className="brand-tag">Software · AI · Platforms</span>
             </span>
@@ -2265,22 +2250,15 @@ const Footer = () => {
     <footer>
       <div className="container foot-grid foot">
         <div>
-          <div className="brand" style={{ marginBottom: 14 }}>
-            <span className="logo-wrap logo-wrap-sm">
-              <span className="logo-glow" aria-hidden="true"/>
-              <img
-                src={logoUrl}
-                alt="Gomarix"
-                className="brand-logo"
-                width="128"
-                height="32"
-                loading="lazy"
-                decoding="async"
-              />
+          <div className="brand brand-wordmark" style={{ marginBottom: 14 }}>
+            <span className="brand-dot" aria-hidden="true"/>
+            <span className="brand-text">
+              <span className="brand-name">Gomarix</span>
+              <span className="brand-tag">Software · AI · Platforms</span>
             </span>
           </div>
           <p style={{ color: 'var(--text-dim)', fontSize: 14, maxWidth: 320, margin:'0 0 20px' }}>
-            We build websites, full-stack applications, SaaS products, and AI-powered automation for businesses of all sizes.
+            We engineer software, AI solutions, SaaS &amp; automation tools, and data platforms — built for education, healthcare, rural tech, and digital inclusion.
           </p>
           <div className="social">
             <a
