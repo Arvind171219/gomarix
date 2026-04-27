@@ -176,11 +176,11 @@ const Progress = () => {
    Navbar
    ========================= */
 const LINKS = [
-  { label: 'Services',  href: '#features' },
-  { label: 'Pricing',   href: '#pricing' },
+  { label: 'Services',   href: '#features' },
+  { label: 'Engagement', href: '#pricing' },
   { label: 'Portfolio',  href: '#customers' },
-  { label: 'FAQ',       href: '#faq' },
-  { label: 'Contact',   href: '#contact' },
+  { label: 'FAQ',        href: '#faq' },
+  { label: 'Contact',    href: '#contact' },
 ];
 
 const Navbar = () => {
@@ -198,8 +198,8 @@ const Navbar = () => {
   return (
     <>
       <div className="announce">
-        <span>🚀 <strong>Now accepting new projects</strong> — Software, AI, SaaS & Data Platforms
-          <a href="#contact">Get a free quote</a>
+        <span>🚀 <strong>Now booking Q2 engagements</strong> — Software, AI, SaaS &amp; data platforms
+          <a href="#contact">Scope a project →</a>
         </span>
       </div>
       <header className={`nav ${scrolled ? 'scrolled' : ''}`}>
@@ -305,13 +305,13 @@ const DashboardMock = () => (
   <div className="dash reveal">
     <div className="dash-top">
       <div className="dots"><span/><span/><span/></div>
-      <span className="url">gomarix.in/projects</span>
+      <span className="url">app.gomarix.in/platform</span>
     </div>
     <div className="dash-row">
       {[
-        { lbl: 'Projects', val: '120+', d: 'Delivered' },
-        { lbl: 'Clients', val: '80+', d: 'Happy' },
-        { lbl: 'Uptime', val: '99.9%', d: 'Guaranteed' },
+        { lbl: 'Platforms shipped', val: '120+', d: 'In production' },
+        { lbl: 'Active users',      val: '180K+', d: 'Across deploys' },
+        { lbl: 'Uptime SLA',        val: '99.9%', d: 'Audited' },
       ].map(s => (
         <div className="stat" key={s.lbl}>
           <div className="lbl">{s.lbl}</div>
@@ -413,12 +413,12 @@ const TechStackIllustration = () => (
    Trust badges strip
    ========================= */
 const TRUST_BADGES = [
-  { icon: '🔒', label: 'SSL Secured',        sub: 'Encrypted by default' },
-  { icon: '⚡', label: 'On-Time Delivery',   sub: 'Or your money back' },
-  { icon: '📝', label: 'NDA-Friendly',       sub: 'Your idea stays safe' },
-  { icon: '💯', label: '100% Code Ownership', sub: 'No vendor lock-in' },
-  { icon: '🇮🇳', label: 'Made in India',     sub: 'Based in Bihar' },
-  { icon: '💬', label: 'Real Human Support', sub: 'WhatsApp · Email · Call' },
+  { icon: '🔐', label: 'Security-first',     sub: 'NDA, audit & data privacy' },
+  { icon: '⚡', label: 'Fixed scope',        sub: 'Quote & milestones upfront' },
+  { icon: '🤖', label: 'Production-grade AI', sub: 'RAG · agents · custom ML' },
+  { icon: '💯', label: '100% code ownership', sub: 'No lock-in, full handover' },
+  { icon: '🌱', label: 'Impact track record', sub: 'EdTech · HealthTech · rural' },
+  { icon: '💬', label: 'Real human support',  sub: 'Slack · WhatsApp · email' },
 ];
 const TrustBadges = () => (
   <section className="trust-strip">
@@ -514,35 +514,35 @@ const PROCESS_STEPS = [
     n: '01',
     icon: 'message',
     h: 'Discover',
-    p: 'Free 30-min call to understand your goals. You get a fixed quote and clear timeline within 24 hours.',
-    duration: 'Day 1',
+    p: 'A focused call to understand the problem, users, and constraints. You get a written scope, milestones, and a fixed quote within 48 hours.',
+    duration: 'Week 1',
   },
   {
     n: '02',
     icon: 'pencil',
     h: 'Design',
-    p: 'We create the design and share a clickable preview. You review and approve before any code is written.',
-    duration: 'Day 2-3',
+    p: 'Architecture, data model, and a clickable design — reviewed and signed off before any production code is written.',
+    duration: 'Week 1–2',
   },
   {
     n: '03',
     icon: 'code',
     h: 'Build',
-    p: 'Our team develops your project with daily progress updates. You get a live staging URL to test anytime.',
-    duration: 'Day 3-6',
+    p: 'Engineers ship in weekly increments with a live staging URL, demo recordings, and a shared tracker. You see progress every Friday.',
+    duration: 'Weeks 2–10',
   },
   {
     n: '04',
     icon: 'bolt',
     h: 'Launch',
-    p: 'We deploy to production, set up analytics, and hand over the keys. You go live with confidence.',
-    duration: 'Day 7',
+    p: 'Production deploy with monitoring, observability, security review, and a complete handover — code, infra, and documentation.',
+    duration: 'Launch week',
   },
   {
     n: '05',
     icon: 'sparkle',
-    h: 'Grow',
-    p: 'Free post-launch support, updates, and optimization. We become your long-term technology partner.',
+    h: 'Iterate',
+    p: 'Free post-launch support window, then an optional retainer for new features, scale, and continued AI / data improvements.',
     duration: 'Ongoing',
   },
 ];
@@ -552,13 +552,13 @@ const HowItWorks = () => (
     <div className="container">
       <div className="section-head reveal">
         <div className="kicker">Our Process</div>
-        <h2>From idea to launch in <span className="accent">7 days</span></h2>
-        <p>Fixed timeline. Daily updates. We deliver when we promise — or your money back.</p>
+        <h2>From discovery to <span className="accent">production-grade</span> software</h2>
+        <p>A clear, milestone-based engagement — fixed scope, weekly demos, and full handover. Built the way modern product teams build.</p>
         <div className="speed-badge reveal">
           <span className="speed-icon" aria-hidden="true">⚡</span>
           <div>
-            <b>Most websites delivered in 7 days</b>
-            <small>Web apps &amp; SaaS may take 2-8 weeks — full timeline shared with quote</small>
+            <b>Pilots ship in 2–4 weeks · Products in 6–12 weeks</b>
+            <small>Platforms run 3+ months — the full timeline is shared with your fixed quote</small>
           </div>
         </div>
       </div>
@@ -647,16 +647,16 @@ const Stats = () => (
    Comparison Table — Gomarix vs Freelancer vs Big Agency
    ========================= */
 const COMPARE_ROWS = [
-  { feature: 'Pilot / MVP price',       freelancer: '₹15K – ₹60K',     gomarix: 'From ₹49,999 fixed', agency: '₹3L – ₹10L+' },
-  { feature: 'Production product',      freelancer: 'Rare',            gomarix: 'From ₹2.49 lakh',  agency: '₹15L – ₹50L+' },
-  { feature: 'AI / data platform work', freelancer: 'Rare',            gomarix: 'Yes — production-grade', agency: 'Yes — but at enterprise rates' },
-  { feature: 'Typical timeline',        freelancer: 'Often delayed',   gomarix: '2–16 weeks fixed', agency: '3–9 months' },
-  { feature: 'Code ownership',          freelancer: 'Sometimes',       gomarix: '100% yours',       agency: 'Often locked-in' },
-  { feature: 'Communication',           freelancer: 'Inconsistent',    gomarix: 'Daily WhatsApp',   agency: 'Account manager only' },
-  { feature: 'Money-back guarantee',    freelancer: false,             gomarix: true,               agency: false },
-  { feature: 'Post-launch support',     freelancer: 'Pay extra',       gomarix: '1–3 months free',  agency: 'Expensive contract' },
-  { feature: 'Education / health / rural focus', freelancer: 'Rare',   gomarix: true,               agency: 'Rare' },
-  { feature: 'Team disappears risk',    freelancer: 'High',            gomarix: 'No — full team',   agency: 'Low' },
+  { feature: 'Engagement model',          freelancer: 'Hourly / vague',   gomarix: 'Fixed scope, milestone-billed', agency: 'Heavy MSAs & SOWs' },
+  { feature: 'Pilot / MVP turnaround',    freelancer: 'Often slips',      gomarix: '2–4 weeks',                     agency: 'Months of onboarding' },
+  { feature: 'Production product build',  freelancer: 'Rare',             gomarix: '6–12 weeks',                    agency: '3–9 months' },
+  { feature: 'AI / data platform work',   freelancer: 'Rare',             gomarix: 'Production-grade',              agency: 'Yes — at enterprise rates' },
+  { feature: 'Education / health / rural focus', freelancer: 'Rare',      gomarix: true,                            agency: 'Rare' },
+  { feature: 'Code, infra & data ownership', freelancer: 'Sometimes',     gomarix: '100% yours, day one',           agency: 'Often locked-in' },
+  { feature: 'Communication',             freelancer: 'Inconsistent',     gomarix: 'Slack / WhatsApp · weekly demos', agency: 'Account manager only' },
+  { feature: 'Milestone delivery guarantee', freelancer: false,           gomarix: true,                            agency: false },
+  { feature: 'Post-launch support',       freelancer: 'Pay extra',        gomarix: '1–3 months free',               agency: 'Expensive contract' },
+  { feature: 'Team continuity',           freelancer: 'High risk',        gomarix: 'Same team end-to-end',          agency: 'Account turnover' },
 ];
 
 const ComparisonTable = () => (
@@ -700,51 +700,64 @@ const ComparisonTable = () => (
 );
 
 /* =========================
-   Pricing
+   How we engage
    ========================= */
-const Pricing = () => {
+const Engagement = () => {
   const { openContact } = useContact();
   const goContact = () => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-  const plans = [
-    { name:'Pilot', price: 49999, priceFrom: true, blurb:'Lean MVPs and proof-of-concepts — perfect for NGOs, rural-tech pilots, and digital-inclusion projects.',
-      features:[
-        'Discovery + product spec',
-        'Single-feature web or mobile MVP',
+  const tracks = [
+    {
+      name: 'Pilot',
+      icon: 'bolt',
+      duration: '2–4 weeks',
+      blurb: 'Validate an idea, ship a working MVP, or run a focused proof-of-concept — ideal for NGOs, rural-tech pilots, and digital-inclusion projects.',
+      points: [
+        'Discovery workshop + product spec',
+        'Single-feature MVP — web or mobile',
         'Lightweight admin / CMS',
-        'Basic AI integration (chat, OCR, summarisation)',
-        'Cloud deploy + analytics',
-        '1 month free post-launch support',
+        'Targeted AI integration (chat, OCR, summarisation)',
+        'Cloud deploy + analytics + handover',
       ],
-      cta:'Start a pilot' },
-    { name:'Product', price: 249000, priceFrom: true, blurb:'Production-grade SaaS, AI tools, and web/mobile platforms for education, healthcare, and growing teams.',
-      features:[
+      cta: 'Scope a pilot',
+    },
+    {
+      name: 'Product',
+      icon: 'sparkle',
+      duration: '6–12 weeks',
+      blurb: 'A production-grade SaaS, AI tool, or full-stack web &amp; mobile platform — built end-to-end with the polish a real userbase deserves.',
+      points: [
         'Full-stack web + mobile platform',
-        'Multi-tenant SaaS or AI tool',
-        'Admin dashboard, roles &amp; billing',
-        'Workflow automation &amp; integrations',
-        'Production AI features (RAG, agents, ML)',
-        '3 months priority support',
+        'Multi-tenant SaaS or AI tool with billing',
+        'Admin dashboard, roles &amp; integrations',
+        'Production AI features — RAG, agents, ML',
+        'Observability, CI/CD &amp; 3 months support',
       ],
-      cta:'Build my product', featured:true },
-    { name:'Platform', price: null, blurb:'End-to-end platforms, data infrastructure, and enterprise rollouts — tailored to scale.',
-      features:[
+      cta: 'Build my product',
+      featured: true,
+    },
+    {
+      name: 'Platform',
+      icon: 'layers',
+      duration: '3 months+',
+      blurb: 'End-to-end platforms, data infrastructure, and enterprise rollouts — engineered for scale, audit, and a long-term roadmap.',
+      points: [
         'Custom data platform &amp; pipelines',
         'Multi-tenant SaaS at scale',
         'Custom AI / ML systems &amp; agents',
         'Security, audit &amp; compliance review',
-        'Dedicated team + SLAs',
-        'Long-term retainer &amp; roadmap',
+        'Dedicated team, SLAs &amp; retainer',
       ],
-      cta:'Talk to sales' },
+      cta: 'Talk to our team',
+    },
   ];
 
   return (
     <section className="block" id="pricing">
       <div className="container">
         <div className="section-head reveal">
-          <div className="kicker">Pricing</div>
-          <h2>Pricing that scales with your project</h2>
-          <p>Transparent, milestone-based pricing across pilots, products, and platforms. Every quote is fixed before we start — no surprises.</p>
+          <div className="kicker">How we engage</div>
+          <h2>Three ways to work with us</h2>
+          <p>Every project is custom-scoped and milestone-priced — no off-the-shelf packages. Pick the engagement that fits where you are; we will share a fixed quote before any work begins.</p>
         </div>
 
         <div className="guarantee-banner reveal">
@@ -755,31 +768,38 @@ const Pricing = () => {
             </svg>
           </div>
           <div className="guarantee-text">
-            <b>100% Money-Back Guarantee</b>
-            <span>If we miss the deadline or you are not happy with the design in the first 7 days, we refund your money. Your risk is zero.</span>
+            <b>Fixed scope. Fixed quote. Milestone billing.</b>
+            <span>You see a written scope and price before kickoff. NGOs and digital-inclusion projects get a discounted rate — just ask.</span>
           </div>
         </div>
 
-        <div className="plans">
-          {plans.map(p => (
-            <div className={`plan reveal ${p.featured ? 'featured' : ''}`} key={p.name}>
-              {p.featured && <span className="tag">MOST POPULAR</span>}
-              <div className="name">{p.name}</div>
-              <div className="price">
-                {p.price === null
-                  ? <>Custom<small> · talk to sales</small></>
-                  : <>{p.priceFrom && <span className="price-from">From </span>}₹{p.price.toLocaleString('en-IN')}<small> /project</small></>}
+        <div className="engage-tracks">
+          {tracks.map(t => (
+            <div className={`engage-track reveal ${t.featured ? 'featured' : ''}`} key={t.name}>
+              {t.featured && <span className="tag">MOST POPULAR</span>}
+              <div className="engage-head">
+                <span className="engage-ico"><Icon name={t.icon} size={22} stroke={2}/></span>
+                <div>
+                  <div className="engage-name">{t.name}</div>
+                  <div className="engage-duration">{t.duration}</div>
+                </div>
               </div>
-              <p className="blurb">{p.blurb}</p>
+              <p className="engage-blurb" dangerouslySetInnerHTML={{ __html: t.blurb }}/>
               <ul>
-                {p.features.map(f => (
-                  <li key={f}>
+                {t.points.map(p => (
+                  <li key={p}>
                     <Icon name="check" size={16} stroke={2.2}/>
-                    <span dangerouslySetInnerHTML={{ __html: f }}/>
+                    <span dangerouslySetInnerHTML={{ __html: p }}/>
                   </li>
                 ))}
               </ul>
-              <button type="button" className={`btn ${p.featured ? 'btn-primary' : 'btn-ghost'} btn-lg`} onClick={() => p.cta === 'Talk to sales' ? openContact('sales', p.name) : goContact()}>{p.cta}</button>
+              <button
+                type="button"
+                className={`btn ${t.featured ? 'btn-primary' : 'btn-ghost'} btn-lg`}
+                onClick={() => t.name === 'Platform' ? openContact('sales', t.name) : goContact()}
+              >
+                {t.cta} <Icon name="arrow" size={15}/>
+              </button>
             </div>
           ))}
         </div>
@@ -792,21 +812,21 @@ const Pricing = () => {
    Testimonials
    ========================= */
 const TESTIMONIALS = [
-  { q:"Gomarix built our entire college management portal in just 4 weeks. Students and faculty love it. Truly professional team.", n:"Dr. Rajesh Mehta", r:"Principal, Delhi Public School", a:"RM" },
-  { q:"Our clinic's appointment booking system has cut no-shows by 60%. Patients book online and get automatic reminders. Game changer.", n:"Dr. Sneha Kapoor", r:"Founder, LifeCare Clinic", a:"SK" },
-  { q:"They delivered a stunning website and an admin dashboard for our restaurant chain. On time, on budget, and beyond expectations.", n:"Arjun Patel", r:"CEO, Spice Route Group", a:"AP" },
-  { q:"Our coaching institute now has online classes, fee management, and parent communication in one app. Enrollment doubled in 3 months.", n:"Priya Singh", r:"Director, BrightPath Academy", a:"PS" },
-  { q:"The AI chatbot handles 70% of our customer queries automatically. Our support team finally has time to focus on real problems.", n:"Vikram Sharma", r:"Founder, ShopSwift", a:"VS" },
-  { q:"Affordable, professional, and on time. Our boutique website looks better than competitors who paid 10x more. Highly recommend.", n:"Anjali Verma", r:"Owner, Aanchal Boutique", a:"AV" },
-  { q:"From scratch to launch in 6 weeks. The admin dashboard saves us hours every day. Best decision we made for our business.", n:"Rohit Gupta", r:"CEO, FreshMart Logistics", a:"RG" },
-  { q:"They built our doctor consultation app with payment gateway and video calls. Patients across Bihar can now reach us. Truly impressed.", n:"Dr. Amit Kumar", r:"Founder, MediConsult", a:"AK" },
-  { q:"Our property listing website doubled enquiries in two months. Buyers can filter, schedule visits, and chat with us — all without us picking up the phone first.", n:"Manish Agarwal", r:"Owner, Prime Properties Patna", a:"MA" },
-  { q:"The online booking system saves us 3 hours daily on phone calls. Direct bookings up 45% — and we stopped paying 20% commission to OTAs.", n:"Sunita Kumari", r:"Manager, Hotel Suvidha Inn", a:"SU" },
-  { q:"Our client portal lets 200+ clients upload documents, track GST filings, and pay invoices online. What used to be email chaos is now organized.", n:"CA Manoj Verma", r:"Founder, Verma & Associates", a:"MV" },
-  { q:"Membership renewals, attendance, and class bookings — all on one app. We doubled member retention because reminders go out automatically.", n:"Karan Singh", r:"Owner, FitZone Gym Bhagalpur", a:"KS" },
-  { q:"We needed a donation page with UPI, cards, and transparency reports. Gomarix delivered something we are proud to share — donations are up 3x this year.", n:"Kavita Joshi", r:"Director, Bihar Rural Education Trust", a:"KJ" },
-  { q:"Wholesale buyers can now log in, see inventory, place bulk orders, and track shipments. Cut our order processing from 2 days to 2 hours.", n:"Suresh Yadav", r:"MD, Yadav Cottons Pvt Ltd", a:"SY" },
-  { q:"Walk-ins are great, but online booking changed our business. We are fully booked 5 days in advance now, and clients love getting WhatsApp reminders.", n:"Pooja Tiwari", r:"Owner, Glow & Style Beauty Parlour", a:"PT" },
+  { q:"Gomarix built our college management platform — admissions, attendance, fee, and a parent app — in eight weeks. Students and faculty actually use it daily, which says everything.", n:"Dr. Rajesh Mehta", r:"Principal, Delhi Public School", a:"RM" },
+  { q:"They shipped our telemedicine platform with video, e-prescriptions, and an AI triage assistant. Patients in low-bandwidth areas finally have reliable access — no-shows dropped 60%.", n:"Dr. Sneha Kapoor", r:"Founder, LifeCare Clinic", a:"SK" },
+  { q:"We needed an internal SaaS to manage a 40-restaurant chain — POS sync, staff, and forecasting. Their team scoped it cleanly, shipped weekly, and the dashboards are now central to operations.", n:"Arjun Patel", r:"CEO, Spice Route Group", a:"AP" },
+  { q:"Our LMS now runs live classes, fee management, parent comms, and an AI doubt-solver — all in one product. Enrollment doubled in three months and parent NPS is at 78.", n:"Priya Singh", r:"Director, BrightPath Academy", a:"PS" },
+  { q:"Their AI agent handles 70% of customer queries on day one — trained on our docs, integrated with our backend. Our support team now focuses on real edge cases instead of FAQs.", n:"Vikram Sharma", r:"Founder, ShopSwift", a:"VS" },
+  { q:"They built a rural-tech worker app that runs offline, syncs over 2G, and lets our field team log visits in Hindi. Coverage in three districts went up 3x in the first quarter.", n:"Kavita Joshi", r:"Director, Bihar Rural Education Trust", a:"KJ" },
+  { q:"From scratch to launch of our multi-tenant logistics SaaS in twelve weeks. Real-time tracking, billing, and a partner portal — order processing cut from 2 days to 2 hours.", n:"Rohit Gupta", r:"CEO, FreshMart Logistics", a:"RG" },
+  { q:"They built our doctor-consultation app with payments, video, and offline-first prescriptions. Patients across rural Bihar can now reach our specialists — and we have data to prove it.", n:"Dr. Amit Kumar", r:"Founder, MediConsult", a:"AK" },
+  { q:"Our property platform now uses LLM-powered search, automated lead qualification, and a buyer portal. Enquiries doubled and our sales team replies in minutes, not hours.", n:"Manish Agarwal", r:"Founder, Prime Properties Patna", a:"MA" },
+  { q:"They re-architected our hotel-group platform around a single data layer — bookings, channels, billing — and exposed it as an API. Direct bookings up 45%, OTA commissions cut in half.", n:"Sunita Kumari", r:"Director, Hotel Suvidha Group", a:"SU" },
+  { q:"Our compliance SaaS for 200+ CA clients — GST filings, document workflow, e-sign, and AI-driven anomaly checks. What used to be email chaos is now an audit-ready platform.", n:"CA Manoj Verma", r:"Founder, Verma & Associates", a:"MV" },
+  { q:"They delivered our membership SaaS with billing, attendance via QR, automated reminders, and a churn-prediction model. Member retention doubled in two quarters.", n:"Karan Singh", r:"Founder, FitZone Health Tech", a:"KS" },
+  { q:"They shipped our donation platform with UPI, cards, transparency reports, and an admin tool our volunteers actually understand. Donations are up 3x and we run a tighter ship.", n:"Anjali Verma", r:"Trustee, Asha Foundation", a:"AV" },
+  { q:"They built our B2B inventory and order-routing platform on top of a real data warehouse. Wholesale buyers self-serve, finance closes 4 days faster, ops finally trust the numbers.", n:"Suresh Yadav", r:"MD, Yadav Cottons Pvt Ltd", a:"SY" },
+  { q:"They built an AgriTech mobile app for our cooperative — Hindi-first, offline-capable, with AI advisory based on local weather and soil data. Adoption was unlike anything we've seen.", n:"Pooja Tiwari", r:"Program Lead, Kisan Mitra Initiative", a:"PT" },
 ];
 
 /* Industry icons used in the "Trusted by" strip */
@@ -896,17 +916,17 @@ const Testimonials = () => {
    FAQ accordion
    ========================= */
 const FAQS = [
-  { q:'Do you offer a money-back guarantee?', a:'Yes — your risk is zero. If we miss our committed delivery date for any reason within our control, we refund your last milestone in full. If you are not satisfied with the design direction within the first 7 days of work, we issue a 100% refund minus any third-party costs (domain, hosting, paid plugins). We put it in writing in every contract.' },
-  { q:'How long does a typical project take?', a:'Timelines vary by scope. A static business website usually takes 1-2 weeks. Full-stack web applications (school portal, clinic booking system, admin dashboard) take 4-8 weeks. Complex SaaS products or AI-powered platforms take 8-16 weeks. Once we understand your requirements, you get a detailed week-by-week timeline before we start — and we stick to it.' },
-  { q:'How does pricing and payment work?', a:'We give you a fixed quote after a free consultation — no hidden fees, no surprise charges. Pilots and MVPs start from ₹49,999, full products (SaaS, AI tools, web/mobile platforms) start from ₹2.49 lakh, and platform engagements (data platforms, multi-tenant SaaS, enterprise rollouts) are custom-quoted. Payment is milestone-based: 30% to start, 40% at mid-build review, and 30% on final delivery. For long-running platforms we offer monthly retainers. NGOs and digital-inclusion projects get a discounted rate — just ask.' },
-  { q:'What technologies do you use?', a:'We pick the best tool for each project. Frontend: React, Next.js, TypeScript, Tailwind. Backend: Node.js, Java/Spring Boot, Python (FastAPI/Django). Mobile: React Native. Databases: PostgreSQL, MongoDB, Redis. Cloud: AWS, Vercel, DigitalOcean. AI: OpenAI, Anthropic, LangChain, custom ML models. We are not locked to any one stack.' },
-  { q:'Do I own the code and the product?', a:'Yes, 100%. Once the final payment is made, all source code, designs, database schemas, and intellectual property belong to you. We hand over the GitHub repo, deployment credentials, and full documentation. You are never locked in — you can take everything and work with any other developer if you choose.' },
-  { q:'Do you provide ongoing support and maintenance?', a:'Every project includes free post-launch support (1-3 months depending on the plan) for bug fixes and small tweaks. After that, we offer affordable monthly maintenance packages covering hosting monitoring, security patches, feature updates, and priority WhatsApp/email support. Most of our clients stay with us long-term.' },
-  { q:'Can you build custom SaaS products and AI automation?', a:'Absolutely — this is our specialty. We build multi-tenant SaaS platforms (subscriptions, billing, user roles, analytics dashboards) and AI-powered workflows (chatbots, document processing, smart recommendations, automated reports). We handle everything from idea validation to deployment to ongoing scale.' },
-  { q:'How do we communicate during the project?', a:'You get a dedicated project manager and a private WhatsApp/Slack channel. We share weekly progress demos, a live staging URL you can test anytime, and a project tracker so you always know exactly where things stand. Response time: within a few hours on business days.' },
-  { q:'What if I need changes during development?', a:'Revisions are expected and welcomed. Every milestone includes a review round where you test the work and request changes. Minor tweaks are always free. Major scope changes (new features, new modules) are discussed openly — we will give you a fair estimate rather than silently inflating hours.' },
-  { q:'Which industries have you worked with?', a:'Our focus areas are education (schools, colleges, EdTech), healthcare (clinics, hospitals, telemedicine), and rural tech — including digital inclusion projects that bring software to underserved communities. We also build for NGOs, early-stage SaaS startups, government and public-sector teams, AgriTech, logistics, and FinTech. If your problem can be solved with software, AI, or automation, we can build it.' },
-  { q:'Where is my project hosted after launch?', a:'We deploy on reliable, scalable infrastructure — typically AWS, Vercel, or DigitalOcean — depending on your needs and budget. Hosting accounts are registered in your name, so you keep full ownership and control. We also set up automated backups, SSL certificates, and monitoring so your site stays fast and secure.' },
+  { q:'How long does a typical engagement take?', a:'Timelines depend on the engagement track. A Pilot or MVP runs 2–4 weeks. A Product (full SaaS, AI tool, or web/mobile platform) runs 6–12 weeks. A Platform engagement (data platform, multi-tenant SaaS at scale, enterprise rollout) runs 3 months and up. After discovery you get a written, week-by-week timeline before we start — and we stick to it.' },
+  { q:'How does pricing and payment work?', a:'Every engagement is custom-scoped and fixed-quote, with milestone billing — typically 30% to start, 40% at mid-build review, and 30% on final delivery. Long-running platforms convert to a monthly retainer. NGOs and digital-inclusion projects get a discounted rate. You always see the full scope and price in writing before any work begins.' },
+  { q:'Do you offer a delivery guarantee?', a:'Yes. Each milestone has a fixed deliverable, deadline, and acceptance criteria written into the SOW. If we miss a committed milestone for reasons within our control, we refund that milestone in full. If after the discovery phase the direction is not right for you, we part ways cleanly with no further commitment.' },
+  { q:'What technologies do you use?', a:'We pick the right tool for each project. Frontend: React, Next.js, TypeScript, Tailwind. Backend: Node.js, Java / Spring Boot, Python (FastAPI / Django), Go. Mobile: React Native, Flutter. Data: PostgreSQL, MongoDB, Redis, BigQuery, Snowflake, dbt, Airflow. Cloud: AWS, GCP, Vercel, DigitalOcean, on-prem when needed. AI: OpenAI, Anthropic, open-weight LLMs, LangChain / LlamaIndex, vector DBs, custom ML on PyTorch / scikit-learn. We are not locked to any one stack.' },
+  { q:'Do I own the code, infrastructure, and data?', a:'Yes, 100%. On final payment, all source code, designs, database schemas, models, and IP belong to you. We hand over the GitHub repo, deployment credentials, infra-as-code, and full documentation. Cloud accounts are registered in your name from day one — you are never locked in.' },
+  { q:'Do you provide ongoing support and maintenance?', a:'Every engagement includes a post-launch support window (1–3 months depending on the track) for bug fixes and small tweaks. After that, most clients move to a monthly retainer covering monitoring, security patches, feature work, AI / data improvements, and priority Slack / WhatsApp / email support.' },
+  { q:'Can you build custom SaaS products, AI tools, and data platforms?', a:'Yes — this is our specialty. We build multi-tenant SaaS (subscriptions, billing, RBAC, analytics), production-grade AI products (RAG systems, agents, classifiers, custom ML), and data platforms (pipelines, warehouses, dashboards, governance). We handle everything from idea validation through scale, with security and audit baked in.' },
+  { q:'How do we communicate during the engagement?', a:'You get a dedicated technical lead, a private Slack or WhatsApp channel, a shared tracker, and a live staging URL. Weekly demos every Friday with recorded walkthroughs. Response within a few hours on business days, same day for blockers.' },
+  { q:'What if requirements change during the project?', a:'Change is expected. Every milestone includes a review round where you test the work and request adjustments. Minor tweaks are always free. Material scope changes are discussed openly — we share a fair re-estimate rather than silently inflating hours, and you decide whether to expand or defer.' },
+  { q:'Which sectors do you focus on?', a:'Our focus is education (schools, colleges, EdTech), healthcare (clinics, hospitals, telemedicine), and rural tech — including digital-inclusion projects that bring software to underserved communities. We also build for NGOs, government and public-sector teams, AgriTech, logistics, FinTech, and early-stage SaaS startups. If your problem can be solved with software, AI, or automation, we can build it.' },
+  { q:'How do you approach security and data privacy?', a:'Security and privacy are scoped from day one. We support NDAs, signed DPAs where relevant, role-based access, audit logs, encryption at rest and in transit, and review against OWASP top-10. For healthcare and education clients, we design around DPDP Act and other applicable standards. For platform engagements we run a formal security review before launch.' },
 ];
 const FAQ = () => {
   const [open, setOpen] = useState(-1);
@@ -1990,14 +2010,14 @@ Thanks!`,
     id: 'pricing',
     label: '💳 Pricing',
     reply:
-`Great question — transparent pricing is our thing.
+`Every engagement is custom-scoped and fixed-quote.
 
-Quick overview:
-• *Pilot* — From ₹49,999 — Lean MVP, single feature, NGO / rural-tech pilots
-• *Product* — From ₹2.49 lakh — Full SaaS, AI tool, or web/mobile platform
-• *Platform* — Custom — Data platforms, multi-tenant SaaS, enterprise rollouts
+Three ways we typically work:
+• *Pilot* — Lean MVP / proof-of-concept (2–4 weeks)
+• *Product* — Production SaaS, AI tool, or platform (6–12 weeks)
+• *Platform* — Data infra, enterprise SaaS, multi-team rollouts (3 months+)
 
-I've drafted a pricing question for you below. Send it on WhatsApp and we'll reply with a custom quote 👇`,
+Tell me a bit about your project below and we'll come back with a written scope and quote on WhatsApp 👇`,
     draft: (ctx) =>
 `Hi Gomarix! 💳
 
@@ -2301,7 +2321,7 @@ const Footer = () => {
           <h5>Company</h5>
           <ul>
             <li><a href="#">About</a></li>
-            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#pricing">How we engage</a></li>
             <li><a href="#faq">FAQ</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
@@ -2381,7 +2401,7 @@ const App = () => {
         <MiniFeatures />
         <HowItWorks />
         <Stats />
-        <Pricing />
+        <Engagement />
         <ComparisonTable />
         <Testimonials />
         <FAQ />
