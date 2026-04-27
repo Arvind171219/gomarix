@@ -198,7 +198,7 @@ const Navbar = () => {
   return (
     <>
       <div className="announce">
-        <span>🚀 <strong>Now accepting new projects</strong> — Websites, Apps & SaaS
+        <span>🚀 <strong>Now accepting new projects</strong> — Software, AI, SaaS & Data Platforms
           <a href="#contact">Get a free quote</a>
         </span>
       </div>
@@ -209,7 +209,7 @@ const Navbar = () => {
               <span className="logo-glow" aria-hidden="true"/>
               <img
                 src={logoUrl}
-                alt="Gomarix — Websites, Apps & Automation in Bihar, India"
+                alt="Gomarix — Software, AI, SaaS & Data Platforms for Education, Healthcare & Rural Tech"
                 className="brand-logo"
                 width="160"
                 height="40"
@@ -260,21 +260,21 @@ const Hero = () => {
       <div className="reveal">
         <span className="eyebrow eyebrow-rotator"><span className="dot"/>
           <span className="eb-cycle">
-            <span className="eb-word">Websites</span>
+            <span className="eb-word">Software</span>
             <span className="eb-sep">·</span>
-            <span className="eb-word">Apps</span>
+            <span className="eb-word">AI Solutions</span>
             <span className="eb-sep">·</span>
-            <span className="eb-word">SaaS</span>
+            <span className="eb-word">SaaS &amp; Automation</span>
             <span className="eb-sep">·</span>
-            <span className="eb-word">AI Automation</span>
+            <span className="eb-word">Data Platforms</span>
           </span>
         </span>
         <h1>
           <span className="accent">Built fast.</span> <span className="accent">Built right.</span> Built to scale.
         </h1>
         <p className="lead">
-          We help local shops, clinics, schools, and ambitious founders win more customers online.
-          Fixed prices, money-back guarantee, made in Bihar.
+          Software development, AI solutions, web &amp; mobile platforms, SaaS &amp; automation tools, and data platforms —
+          built for education, healthcare, and rural tech. Powering digital inclusion across India.
         </p>
         <div className="hero-cta">
           <button type="button" className="btn btn-primary btn-lg" onClick={goContact}>Get a free quote <Icon name="arrow" size={16}/></button>
@@ -335,7 +335,7 @@ const DashboardMock = () => (
       <div className="icon"><Icon name="bolt" size={16} stroke={2.2}/></div>
       <div className="meta">
         <b>New project deployed</b>
-        <small>College portal · Full-stack · Live</small>
+        <small>Rural health platform · AI-assisted · Live</small>
       </div>
       <span className="live">● LIVE</span>
     </div>
@@ -346,7 +346,7 @@ const LogoCloud = () => (
   <div className="container logos">
     <p>Trusted by businesses across industries</p>
     <div className="logos-row">
-      {['HOSPITALS', 'SCHOOLS', 'STARTUPS', 'CLINICS', 'E-COMMERCE', 'AGENCIES'].map(n => (
+      {['EDUCATION', 'HEALTHCARE', 'RURAL TECH', 'STARTUPS', 'NGOs', 'GOVT & PUBLIC'].map(n => (
         <div className="logo-item" key={n}>{n}</div>
       ))}
     </div>
@@ -440,28 +440,28 @@ const Showcase = () => (
     <div className="container">
       <div className="section-head reveal">
         <div className="kicker">Our Services</div>
-        <h2>What we build for your business</h2>
-        <p>We deliver complete digital solutions — from simple landing pages to complex full-stack applications and AI-powered automation.</p>
+        <h2>What we build</h2>
+        <p>Software development, AI solutions, web &amp; mobile platforms, SaaS &amp; AI tools, automation software, and data platforms — engineered for education, healthcare, and rural tech.</p>
       </div>
 
       <div className="showcase">
         <div className="card reveal">
           <div className="ico"><Icon name="sparkle"/></div>
-          <h3>SaaS Products &amp; AI Automation</h3>
-          <p>Custom SaaS platforms and AI-powered workflow automation that streamline operations, reduce manual work, and scale with your business.</p>
+          <h3>SaaS &amp; AI Tools</h3>
+          <p>Multi-tenant SaaS products and AI-powered tools — chatbots, copilots, document intelligence, and decision systems built on modern LLMs and your own data.</p>
           <TechStackIllustration />
         </div>
 
         <div className="card reveal">
           <div className="ico"><Icon name="cpu"/></div>
-          <h3>AI Chatbots &amp; Virtual Assistants</h3>
-          <p>Intelligent chatbots for customer support, lead generation, and internal tools — trained on your data and integrated across WhatsApp, web, and apps.</p>
+          <h3>Automation &amp; Data Platforms</h3>
+          <p>Workflow automation, ETL pipelines, analytics dashboards, and data platforms that turn scattered information into reliable, actionable insight.</p>
         </div>
 
         <div className="card reveal">
           <div className="ico"><Icon name="layers"/></div>
-          <h3>Full-Stack Web Applications</h3>
-          <p>Custom apps for colleges, schools, hospitals, clinics, and businesses — appointment booking, student portals, admin dashboards, and more.</p>
+          <h3>Web &amp; Mobile Platforms</h3>
+          <p>Full-stack web and mobile apps for education, healthcare, and rural tech — student portals, telemedicine, field-worker apps, and digital inclusion projects.</p>
         </div>
       </div>
     </div>
@@ -472,20 +472,20 @@ const Showcase = () => (
    Feature mini grid
    ========================= */
 const MINIS = [
-  { ico:'chart',    h:'Business Automation',     p:'Automate invoicing, notifications, reporting, and repetitive tasks with AI-powered workflows.' },
-  { ico:'workflow', h:'Business Websites',       p:'Professional, SEO-optimized websites and landing pages that convert visitors into customers.' },
-  { ico:'code',     h:'E-Commerce Solutions',    p:'Custom online stores with payment gateways, inventory management, and order tracking.' },
-  { ico:'lock',     h:'Admin Dashboards',        p:'Powerful back-office panels with role-based access, analytics, and real-time data management.' },
-  { ico:'target',   h:'API & System Integration', p:'Connect your existing tools — CRMs, payment systems, ERPs — into one seamless ecosystem.' },
-  { ico:'cpu',      h:'Appointment Booking',     p:'Online scheduling for doctors, clinics, and salons — with automated reminders and calendar sync.' },
+  { ico:'code',     h:'Custom Software Development', p:'End-to-end product engineering — architecture, development, testing, and deployment for web, mobile, and cloud-native systems.' },
+  { ico:'cpu',      h:'AI Solutions',                p:'LLM apps, RAG, intelligent agents, and ML models — from prototype to production-grade AI integrated into your workflows.' },
+  { ico:'layers',   h:'Web & Mobile Platforms',      p:'Cross-platform web and mobile apps — fast, accessible, and built to work even on low-bandwidth networks.' },
+  { ico:'sparkle',  h:'SaaS & AI Tools',             p:'Multi-tenant SaaS products with subscriptions, billing, role-based access, and AI features baked in.' },
+  { ico:'workflow', h:'Automation Software',         p:'Replace repetitive manual work with reliable automations — workflows, integrations, alerts, and scheduled jobs.' },
+  { ico:'chart',    h:'Data Platforms',              p:'Pipelines, warehouses, analytics, and dashboards that turn messy data into trusted, real-time decisions.' },
 ];
 const MiniFeatures = () => (
   <section className="block">
     <div className="container">
       <div className="section-head reveal">
-        <div className="kicker">Solutions</div>
-        <h2>Built for every industry</h2>
-        <p>Healthcare, education, retail, services — we build tailored software that fits your exact workflow.</p>
+        <div className="kicker">Focus Areas</div>
+        <h2>Built for education, healthcare &amp; rural tech</h2>
+        <p>We build apps for schools, clinics, and rural communities — and partner on digital inclusion projects that bring technology to the people who need it most.</p>
       </div>
       <div className="feature-grid">
         {MINIS.map(m => (
@@ -778,18 +778,18 @@ const TESTIMONIALS = [
 
 /* Industry icons used in the "Trusted by" strip */
 const INDUSTRIES = [
-  { name: 'Schools & Colleges', svg: <path d="M22 10 12 4 2 10l10 6 10-6Z M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5 M22 10v6"/> },
-  { name: 'Clinics & Hospitals', svg: <g><path d="M3 7h18v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M12 11v6 M9 14h6"/></g> },
-  { name: 'Restaurants & Cafés', svg: <g><path d="M6 3v8a3 3 0 0 0 6 0V3 M9 11v10 M16 3v18 M16 13c2 0 4-2 4-5V3"/></g> },
-  { name: 'Hotels & Stays', svg: <g><path d="M3 21V8l9-5 9 5v13"/><path d="M9 21v-7h6v7 M9 11h6"/></g> },
+  { name: 'Education & EdTech', svg: <path d="M22 10 12 4 2 10l10 6 10-6Z M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5 M22 10v6"/> },
+  { name: 'Healthcare & Clinics', svg: <g><path d="M3 7h18v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M12 11v6 M9 14h6"/></g> },
+  { name: 'Rural Tech', svg: <g><path d="M3 21V11l4-3 4 3v10 M11 21V8l5-4 5 4v13 M3 21h18"/></g> },
+  { name: 'Digital Inclusion', svg: <path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10Z"/> },
+  { name: 'NGOs & Causes', svg: <g><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></g> },
+  { name: 'Telemedicine', svg: <g><rect x="3" y="6" width="14" height="10" rx="2"/><path d="M17 10l4-2v8l-4-2 M8 11h6 M11 8v6"/></g> },
+  { name: 'AgriTech', svg: <g><path d="M12 22V8 M12 14c-3 0-6-2-6-6 3 0 6 2 6 6Z M12 14c3 0 6-2 6-6-3 0-6 2-6 6Z"/></g> },
+  { name: 'Govt & Public Sector', svg: <g><path d="M3 21h18 M5 21V10l7-5 7 5v11 M9 21v-6h6v6"/></g> },
+  { name: 'Startups & SaaS', svg: <g><path d="M5 19c4-4 8-8 14-14 M5 19l-2 2 4 0 M19 5l2-2 0 4"/><circle cx="12" cy="12" r="2"/></g> },
+  { name: 'Logistics & Supply', svg: <g><path d="M2 16V7a1 1 0 0 1 1-1h11v10 M14 8h5l3 4v4h-2"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></g> },
   { name: 'E-commerce & Retail', svg: <g><path d="M5 7h14l-1 13H6Z M9 7V5a3 3 0 0 1 6 0v2"/></g> },
-  { name: 'Logistics', svg: <g><path d="M2 16V7a1 1 0 0 1 1-1h11v10 M14 8h5l3 4v4h-2"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></g> },
-  { name: 'Real Estate', svg: <g><path d="M3 21V8l5-3 5 3v13M13 21V11l4-2 4 2v10 M3 21h18 M7 12h2 M7 16h2 M16 14h2 M16 18h2"/></g> },
-  { name: 'Finance & CA', svg: <g><path d="M14 4h-7 M14 8h-7 M14 14H6 M11 18H6 M14 4l3 6.5L14 17l-3-6.5z" strokeLinejoin="round"/></g> },
-  { name: 'Fitness & Gym', svg: <g><path d="M6 7v10 M18 7v10 M2 10v4 M22 10v4 M6 12h12"/></g> },
-  { name: 'NGOs & Causes', svg: <path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10Z"/> },
-  { name: 'Manufacturing', svg: <g><path d="M3 21V11l5 3V11l5 3V8l8 5v8Z M7 21v-4 M11 21v-4 M15 21v-4"/></g> },
-  { name: 'Salons & Beauty', svg: <g><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M9 9l11 11 M9 15L20 4"/></g> },
+  { name: 'Finance & FinTech', svg: <g><path d="M14 4h-7 M14 8h-7 M14 14H6 M11 18H6 M14 4l3 6.5L14 17l-3-6.5z" strokeLinejoin="round"/></g> },
 ];
 
 const IndustriesStrip = () => (
@@ -821,8 +821,8 @@ const Testimonials = () => {
       <div className="container">
         <div className="section-head reveal">
           <div className="kicker">Portfolio</div>
-          <h2>Trusted by businesses across industries</h2>
-          <p>From schools to clinics to restaurant chains — hear what our clients have to say.</p>
+          <h2>Trusted across education, healthcare &amp; rural tech</h2>
+          <p>From schools and clinics to rural-tech and digital-inclusion projects — hear what our partners have to say.</p>
         </div>
 
         <IndustriesStrip />
@@ -872,7 +872,7 @@ const FAQS = [
   { q:'Can you build custom SaaS products and AI automation?', a:'Absolutely — this is our specialty. We build multi-tenant SaaS platforms (subscriptions, billing, user roles, analytics dashboards) and AI-powered workflows (chatbots, document processing, smart recommendations, automated reports). We handle everything from idea validation to deployment to ongoing scale.' },
   { q:'How do we communicate during the project?', a:'You get a dedicated project manager and a private WhatsApp/Slack channel. We share weekly progress demos, a live staging URL you can test anytime, and a project tracker so you always know exactly where things stand. Response time: within a few hours on business days.' },
   { q:'What if I need changes during development?', a:'Revisions are expected and welcomed. Every milestone includes a review round where you test the work and request changes. Minor tweaks are always free. Major scope changes (new features, new modules) are discussed openly — we will give you a fair estimate rather than silently inflating hours.' },
-  { q:'Which industries have you worked with?', a:'Healthcare (clinics, hospitals, telemedicine), education (schools, colleges, coaching institutes), e-commerce, hospitality (restaurants, hotels), real estate, logistics, professional services, and early-stage startups. If your business has a workflow that can be digitized, we can build it.' },
+  { q:'Which industries have you worked with?', a:'Our focus areas are education (schools, colleges, EdTech), healthcare (clinics, hospitals, telemedicine), and rural tech — including digital inclusion projects that bring software to underserved communities. We also build for NGOs, early-stage SaaS startups, government and public-sector teams, AgriTech, logistics, and FinTech. If your problem can be solved with software, AI, or automation, we can build it.' },
   { q:'Where is my project hosted after launch?', a:'We deploy on reliable, scalable infrastructure — typically AWS, Vercel, or DigitalOcean — depending on your needs and budget. Hosting accounts are registered in your name, so you keep full ownership and control. We also set up automated backups, SSL certificates, and monitoring so your site stays fast and secure.' },
 ];
 const FAQ = () => {
@@ -915,7 +915,7 @@ const BigCTA = () => {
     <div className="container">
       <div className="cta-card reveal">
         <h2>Ready to bring your idea to life?</h2>
-        <p>Whether you need a SaaS product, AI automation, a full-stack app, or a business website — let's build it together. Get a free consultation today.</p>
+        <p>Whether you need custom software, an AI solution, a SaaS or automation tool, a data platform, or an app for education, healthcare, or rural tech — let's build it together. Get a free consultation today.</p>
         <div className="btns">
           <button type="button" className="btn btn-primary btn-lg" onClick={goContact}>Get a free quote <Icon name="arrow" size={16}/></button>
           <button type="button" className="btn btn-ghost btn-lg" onClick={openScheduler}>Book a free consultation</button>
@@ -1026,12 +1026,14 @@ const ContactForm = ({ compact = false, defaultInterest = 'getstarted', onDone }
               value={form.interest}
               onChange={(v) => setForm({ ...form, interest: v })}
               options={[
-                { value: 'getstarted', label: 'Start a project',     desc: 'Website, app, or SaaS',          icon: 'bolt' },
-                { value: 'demo',       label: 'Free consultation',  desc: 'Discuss your requirements',      icon: 'sparkle' },
-                { value: 'sales',      label: 'Custom quote',       desc: 'Pricing for complex projects',   icon: 'chart' },
-                { value: 'support',    label: 'Customer support',   desc: 'Help with existing account',     icon: 'shield' },
-                { value: 'partner',    label: 'Partnership',        desc: 'White-label, referral, agency',  icon: 'layers' },
-                { value: 'other',      label: 'Something else',     desc: 'Tell us what you need',          icon: 'message' },
+                { value: 'getstarted', label: 'Software development',  desc: 'Web, mobile, or custom platform', icon: 'code' },
+                { value: 'ai',         label: 'AI solution',           desc: 'LLMs, agents, ML, automation',    icon: 'cpu' },
+                { value: 'saas',       label: 'SaaS / AI tool',        desc: 'Multi-tenant product build',      icon: 'sparkle' },
+                { value: 'data',       label: 'Data platform',         desc: 'Pipelines, analytics, dashboards',icon: 'chart' },
+                { value: 'inclusion',  label: 'Education / Health / Rural', desc: 'EdTech, HealthTech, digital inclusion', icon: 'shield' },
+                { value: 'demo',       label: 'Free consultation',     desc: 'Discuss your requirements',       icon: 'bolt' },
+                { value: 'partner',    label: 'Partnership',           desc: 'NGO, agency, or referral',        icon: 'layers' },
+                { value: 'other',      label: 'Something else',        desc: 'Tell us what you need',           icon: 'message' },
               ]}
             />
           </div>
@@ -2245,19 +2247,21 @@ const Footer = () => {
         <div>
           <h5>Services</h5>
           <ul>
-            <li><a href="#features">Static Websites</a></li>
-            <li><a href="#features">Full-Stack Apps</a></li>
-            <li><a href="#features">SaaS Products</a></li>
-            <li><a href="#features">AI Automation</a></li>
+            <li><a href="#features">Software Development</a></li>
+            <li><a href="#features">AI Solutions</a></li>
+            <li><a href="#features">Web &amp; Mobile Platforms</a></li>
+            <li><a href="#features">SaaS &amp; AI Tools</a></li>
+            <li><a href="#features">Automation Software</a></li>
+            <li><a href="#features">Data Platforms</a></li>
           </ul>
         </div>
         <div>
-          <h5>Industries</h5>
+          <h5>Focus Areas</h5>
           <ul>
+            <li><a href="#customers">Education &amp; EdTech</a></li>
             <li><a href="#customers">Healthcare</a></li>
-            <li><a href="#customers">Education</a></li>
-            <li><a href="#customers">E-Commerce</a></li>
-            <li><a href="#contact">Contact us</a></li>
+            <li><a href="#customers">Rural Tech</a></li>
+            <li><a href="#customers">Digital Inclusion</a></li>
           </ul>
         </div>
         <div>
