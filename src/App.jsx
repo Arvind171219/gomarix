@@ -204,12 +204,12 @@ const Navbar = () => {
       </div>
       <header className={`nav ${scrolled ? 'scrolled' : ''}`}>
         <div className="container nav-inner">
-          <a href="#top" className="brand">
+          <a href="#top" className="brand brand-lockup" aria-label="Gomarix — Software, AI & data platforms">
             <span className="logo-wrap">
               <span className="logo-glow" aria-hidden="true"/>
               <img
                 src={logoUrl}
-                alt="Gomarix — Software, AI, SaaS & Data Platforms for Education, Healthcare & Rural Tech"
+                alt=""
                 className="brand-logo"
                 width="160"
                 height="40"
@@ -218,6 +218,10 @@ const Navbar = () => {
               />
               <span className="logo-orbit" aria-hidden="true"/>
               <span className="logo-spark" aria-hidden="true"/>
+            </span>
+            <span className="brand-text" aria-hidden="true">
+              <span className="brand-name">Gomarix</span>
+              <span className="brand-tag">Software · AI · Platforms</span>
             </span>
           </a>
           <ul className="nav-links">
@@ -270,11 +274,13 @@ const Hero = () => {
           </span>
         </span>
         <h1>
-          <span className="accent">Built fast.</span> <span className="accent">Built right.</span> Built to scale.
+          <span className="accent">Software.</span> <span className="accent">AI.</span> <span className="accent">Platforms.</span>
+          <br/>Built for India's <span className="accent-soft">next billion</span>.
         </h1>
         <p className="lead">
-          Software development, AI solutions, web &amp; mobile platforms, SaaS &amp; automation tools, and data platforms —
-          built for education, healthcare, and rural tech. Powering digital inclusion across India.
+          We engineer custom software, AI solutions, SaaS &amp; automation tools, and data platforms — focused on
+          <strong> education, healthcare, and rural tech</strong>, and the digital-inclusion projects that bring technology
+          to the people who need it most.
         </p>
         <div className="hero-cta">
           <button type="button" className="btn btn-primary btn-lg" onClick={goContact}>Get a free quote <Icon name="arrow" size={16}/></button>
@@ -641,15 +647,16 @@ const Stats = () => (
    Comparison Table — Gomarix vs Freelancer vs Big Agency
    ========================= */
 const COMPARE_ROWS = [
-  { feature: 'Starting price',          freelancer: '₹3K – ₹15K',     gomarix: '₹4,999 fixed', agency: '₹1L – ₹10L+' },
-  { feature: 'Typical timeline',        freelancer: 'Often delayed',   gomarix: '1–8 weeks fixed', agency: '3–6 months' },
-  { feature: 'Code ownership',          freelancer: 'Sometimes',       gomarix: '100% yours',      agency: 'Often locked-in' },
-  { feature: 'Communication',           freelancer: 'Inconsistent',    gomarix: 'Daily WhatsApp',  agency: 'Account manager only' },
-  { feature: 'Money-back guarantee',    freelancer: false,             gomarix: true,              agency: false },
-  { feature: 'Post-launch support',     freelancer: 'Pay extra',       gomarix: '1–6 months free', agency: 'Expensive contract' },
-  { feature: 'Modern tech stack',       freelancer: 'Hit or miss',     gomarix: true,              agency: true },
-  { feature: 'Team disappears risk',    freelancer: 'High',            gomarix: 'No — full team',  agency: 'Low' },
-  { feature: 'Designed for Indian SMBs', freelancer: 'Sometimes',      gomarix: true,              agency: false },
+  { feature: 'Pilot / MVP price',       freelancer: '₹15K – ₹60K',     gomarix: 'From ₹49,999 fixed', agency: '₹3L – ₹10L+' },
+  { feature: 'Production product',      freelancer: 'Rare',            gomarix: 'From ₹2.49 lakh',  agency: '₹15L – ₹50L+' },
+  { feature: 'AI / data platform work', freelancer: 'Rare',            gomarix: 'Yes — production-grade', agency: 'Yes — but at enterprise rates' },
+  { feature: 'Typical timeline',        freelancer: 'Often delayed',   gomarix: '2–16 weeks fixed', agency: '3–9 months' },
+  { feature: 'Code ownership',          freelancer: 'Sometimes',       gomarix: '100% yours',       agency: 'Often locked-in' },
+  { feature: 'Communication',           freelancer: 'Inconsistent',    gomarix: 'Daily WhatsApp',   agency: 'Account manager only' },
+  { feature: 'Money-back guarantee',    freelancer: false,             gomarix: true,               agency: false },
+  { feature: 'Post-launch support',     freelancer: 'Pay extra',       gomarix: '1–3 months free',  agency: 'Expensive contract' },
+  { feature: 'Education / health / rural focus', freelancer: 'Rare',   gomarix: true,               agency: 'Rare' },
+  { feature: 'Team disappears risk',    freelancer: 'High',            gomarix: 'No — full team',   agency: 'Low' },
 ];
 
 const ComparisonTable = () => (
@@ -699,12 +706,36 @@ const Pricing = () => {
   const { openContact } = useContact();
   const goContact = () => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
   const plans = [
-    { name:'Basic', price: 4999, blurb:'Perfect for local shops and personal brands getting online.',
-      features:['Up to 5-page responsive website','Mobile-friendly design','Basic SEO setup','Contact form + WhatsApp button','Google Maps integration','Free hosting setup help','1 month free support'], cta:'Get started' },
-    { name:'Standard', price: 12999, blurb:'For growing businesses that need more pages and features.',
-      features:['Up to 10-page custom website','Advanced SEO + Google Search setup','Blog / CMS so you can update yourself','Lead capture forms with email alerts','Google Analytics + Search Console','Speed & security optimization','3 months free support'], cta:'Get started', featured:true },
-    { name:'Premium', price: 24999, blurb:'Full web app with admin dashboard, payments, and automation.',
-      features:['Everything in Standard','Custom web app or booking system','Admin dashboard with user roles','Payment gateway integration','WhatsApp / SMS automation','AI chatbot or auto-replies','6 months priority support'], cta:'Get started' },
+    { name:'Pilot', price: 49999, priceFrom: true, blurb:'Lean MVPs and proof-of-concepts — perfect for NGOs, rural-tech pilots, and digital-inclusion projects.',
+      features:[
+        'Discovery + product spec',
+        'Single-feature web or mobile MVP',
+        'Lightweight admin / CMS',
+        'Basic AI integration (chat, OCR, summarisation)',
+        'Cloud deploy + analytics',
+        '1 month free post-launch support',
+      ],
+      cta:'Start a pilot' },
+    { name:'Product', price: 249000, priceFrom: true, blurb:'Production-grade SaaS, AI tools, and web/mobile platforms for education, healthcare, and growing teams.',
+      features:[
+        'Full-stack web + mobile platform',
+        'Multi-tenant SaaS or AI tool',
+        'Admin dashboard, roles &amp; billing',
+        'Workflow automation &amp; integrations',
+        'Production AI features (RAG, agents, ML)',
+        '3 months priority support',
+      ],
+      cta:'Build my product', featured:true },
+    { name:'Platform', price: null, blurb:'End-to-end platforms, data infrastructure, and enterprise rollouts — tailored to scale.',
+      features:[
+        'Custom data platform &amp; pipelines',
+        'Multi-tenant SaaS at scale',
+        'Custom AI / ML systems &amp; agents',
+        'Security, audit &amp; compliance review',
+        'Dedicated team + SLAs',
+        'Long-term retainer &amp; roadmap',
+      ],
+      cta:'Talk to sales' },
   ];
 
   return (
@@ -712,8 +743,8 @@ const Pricing = () => {
       <div className="container">
         <div className="section-head reveal">
           <div className="kicker">Pricing</div>
-          <h2>Honest, fixed pricing for every business</h2>
-          <p>No hidden fees. Pay-as-you-go milestones. Custom quotes available for complex builds.</p>
+          <h2>Pricing that scales with your project</h2>
+          <p>Transparent, milestone-based pricing across pilots, products, and platforms. Every quote is fixed before we start — no surprises.</p>
         </div>
 
         <div className="guarantee-banner reveal">
@@ -735,18 +766,20 @@ const Pricing = () => {
               {p.featured && <span className="tag">MOST POPULAR</span>}
               <div className="name">{p.name}</div>
               <div className="price">
-                {p.price === null ? 'Custom' : <>₹{p.price.toLocaleString('en-IN')}<small> /project</small></>}
+                {p.price === null
+                  ? <>Custom<small> · talk to sales</small></>
+                  : <>{p.priceFrom && <span className="price-from">From </span>}₹{p.price.toLocaleString('en-IN')}<small> /project</small></>}
               </div>
               <p className="blurb">{p.blurb}</p>
               <ul>
                 {p.features.map(f => (
                   <li key={f}>
                     <Icon name="check" size={16} stroke={2.2}/>
-                    {f}
+                    <span dangerouslySetInnerHTML={{ __html: f }}/>
                   </li>
                 ))}
               </ul>
-              <button type="button" className={`btn ${p.featured ? 'btn-primary' : 'btn-ghost'} btn-lg`} onClick={() => p.cta === 'Contact sales' ? openContact('sales', p.name) : goContact()}>{p.cta}</button>
+              <button type="button" className={`btn ${p.featured ? 'btn-primary' : 'btn-ghost'} btn-lg`} onClick={() => p.cta === 'Talk to sales' ? openContact('sales', p.name) : goContact()}>{p.cta}</button>
             </div>
           ))}
         </div>
@@ -865,7 +898,7 @@ const Testimonials = () => {
 const FAQS = [
   { q:'Do you offer a money-back guarantee?', a:'Yes — your risk is zero. If we miss our committed delivery date for any reason within our control, we refund your last milestone in full. If you are not satisfied with the design direction within the first 7 days of work, we issue a 100% refund minus any third-party costs (domain, hosting, paid plugins). We put it in writing in every contract.' },
   { q:'How long does a typical project take?', a:'Timelines vary by scope. A static business website usually takes 1-2 weeks. Full-stack web applications (school portal, clinic booking system, admin dashboard) take 4-8 weeks. Complex SaaS products or AI-powered platforms take 8-16 weeks. Once we understand your requirements, you get a detailed week-by-week timeline before we start — and we stick to it.' },
-  { q:'How does pricing and payment work?', a:'We give you a fixed quote after a free consultation — no hidden fees, no surprise charges. For most projects, payment is split into milestones: 30% to start, 40% at mid-build review, and 30% on final delivery. For long-running SaaS builds, we offer monthly retainers. All quotes include revisions, testing, deployment, and documentation.' },
+  { q:'How does pricing and payment work?', a:'We give you a fixed quote after a free consultation — no hidden fees, no surprise charges. Pilots and MVPs start from ₹49,999, full products (SaaS, AI tools, web/mobile platforms) start from ₹2.49 lakh, and platform engagements (data platforms, multi-tenant SaaS, enterprise rollouts) are custom-quoted. Payment is milestone-based: 30% to start, 40% at mid-build review, and 30% on final delivery. For long-running platforms we offer monthly retainers. NGOs and digital-inclusion projects get a discounted rate — just ask.' },
   { q:'What technologies do you use?', a:'We pick the best tool for each project. Frontend: React, Next.js, TypeScript, Tailwind. Backend: Node.js, Java/Spring Boot, Python (FastAPI/Django). Mobile: React Native. Databases: PostgreSQL, MongoDB, Redis. Cloud: AWS, Vercel, DigitalOcean. AI: OpenAI, Anthropic, LangChain, custom ML models. We are not locked to any one stack.' },
   { q:'Do I own the code and the product?', a:'Yes, 100%. Once the final payment is made, all source code, designs, database schemas, and intellectual property belong to you. We hand over the GitHub repo, deployment credentials, and full documentation. You are never locked in — you can take everything and work with any other developer if you choose.' },
   { q:'Do you provide ongoing support and maintenance?', a:'Every project includes free post-launch support (1-3 months depending on the plan) for bug fixes and small tweaks. After that, we offer affordable monthly maintenance packages covering hosting monitoring, security patches, feature updates, and priority WhatsApp/email support. Most of our clients stay with us long-term.' },
@@ -1960,9 +1993,9 @@ Thanks!`,
 `Great question — transparent pricing is our thing.
 
 Quick overview:
-• *Basic* — ₹4,999 — 5-page website, SEO, contact form
-• *Standard* — ₹12,999 — 10 pages, blog, advanced SEO, analytics
-• *Premium* — ₹24,999 — web app, admin panel, payments, automation
+• *Pilot* — From ₹49,999 — Lean MVP, single feature, NGO / rural-tech pilots
+• *Product* — From ₹2.49 lakh — Full SaaS, AI tool, or web/mobile platform
+• *Platform* — Custom — Data platforms, multi-tenant SaaS, enterprise rollouts
 
 I've drafted a pricing question for you below. Send it on WhatsApp and we'll reply with a custom quote 👇`,
     draft: (ctx) =>
@@ -1970,7 +2003,7 @@ I've drafted a pricing question for you below. Send it on WhatsApp and we'll rep
 
 I'm looking for a quote on a project${ctx.company ? ` for ${ctx.company}` : ''}.
 
-*What I need:* [website / app / SaaS / automation]
+*What I need:* [software / AI solution / SaaS / automation / data platform]
 *Key features:* [list main features]
 *Timeline:* [when do you need it]
 *Budget range:* [if known]

@@ -852,6 +852,55 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 }
 .brand { animation: brandSlideIn .7s var(--ease) both; }
 
+/* === Brand lockup: logo + wordmark + tagline === */
+.brand-lockup { gap: 14px; }
+.brand-text {
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  line-height: 1;
+  padding-left: 14px;
+  border-left: 1px solid var(--border);
+  transition: border-color .35s var(--ease);
+}
+.brand-lockup:hover .brand-text { border-color: rgba(91,140,255,0.45); }
+.brand-name {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: -0.035em;
+  background: linear-gradient(120deg, var(--text) 0%, #8aa8ff 60%, var(--text) 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 7s linear infinite;
+}
+.brand-tag {
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.brand-tag::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--success);
+  box-shadow: 0 0 0 3px rgba(34,211,154,0.18);
+  flex: none;
+}
+:root[data-theme="light"] .brand-tag { color: #6c7a99; }
+@media (min-width: 760px) {
+  .brand-text { display: inline-flex; }
+}
+
 .brand-mark {
   width: 34px; height: 34px;
   border-radius: 10px;
@@ -1034,6 +1083,23 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
   -webkit-text-fill-color: transparent;
   animation: shine 6s linear infinite;
 }
+.hero h1 .accent-soft {
+  background: linear-gradient(120deg, #22d39a, #8aa8ff 60%, #a584ff);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  white-space: nowrap;
+}
+.hero h1 .accent-soft::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: -2px;
+  height: 6px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, rgba(34,211,154,0.0), rgba(91,140,255,0.45), rgba(165,132,255,0.0));
+  filter: blur(4px);
+}
 @keyframes shine {
   0% { background-position: 0% 50%; }
   100% { background-position: 200% 50%; }
@@ -1041,8 +1107,18 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 .hero p.lead {
   font-size: 18px;
   color: var(--text-dim);
-  max-width: 540px;
+  max-width: 560px;
   margin: 0 0 28px;
+}
+.hero p.lead strong {
+  color: var(--text);
+  font-weight: 700;
+  background: linear-gradient(transparent 70%, rgba(91,140,255,0.18) 70%);
+  padding: 0 2px;
+  border-radius: 2px;
+}
+:root[data-theme="light"] .hero p.lead strong {
+  background: linear-gradient(transparent 70%, rgba(47,95,255,0.16) 70%);
 }
 .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
 .hero-meta {
@@ -1542,6 +1618,16 @@ section.block { padding: 110px 0; position: relative; }
   letter-spacing: -0.03em;
 }
 .plan .price small { font-size: 14px; color: var(--text-mute); font-weight: 500; }
+.plan .price .price-from {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  margin-right: 6px;
+  vertical-align: middle;
+}
 .plan .blurb { color: var(--text-dim); font-size: 14px; margin: 0 0 20px; min-height: 42px; }
 .plan ul { list-style: none; padding: 0; margin: 0 0 24px; }
 .plan li {
