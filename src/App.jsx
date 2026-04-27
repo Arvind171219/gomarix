@@ -260,12 +260,11 @@ const Hero = () => {
         </span>
         <h1>
           <span className="accent">Software.</span> <span className="accent">AI.</span> <span className="accent">Platforms.</span>
-          <br/>Built for India's <span className="accent-soft">next billion</span>.
+          <br/>Built for India's <span className="accent-soft">last mile</span>.
         </h1>
         <p className="lead">
-          We engineer custom software, AI solutions, SaaS &amp; automation tools, and data platforms — focused on
-          <strong> education, healthcare, and rural tech</strong>, and the digital-inclusion projects that bring technology
-          to the people who need it most.
+          We engineer SaaS, AI tools, and data platforms for <strong>education, healthcare, and rural tech</strong> —
+          production-grade software for the teams shaping India's next decade.
         </p>
         <div className="hero-cta">
           <button type="button" className="btn btn-primary btn-lg" onClick={goContact}>Get a free quote <Icon name="arrow" size={16}/></button>
@@ -796,22 +795,39 @@ const Engagement = () => {
 /* =========================
    Testimonials
    ========================= */
+/* Anonymised, illustrative case cards — no real names, no fabricated endorsements.
+   Replace with real client quotes (with permission) once collected. */
 const TESTIMONIALS = [
-  { q:"Gomarix built our college management platform — admissions, attendance, fee, and a parent app — in eight weeks. Students and faculty actually use it daily, which says everything.", n:"Dr. Rajesh Mehta", r:"Principal, Delhi Public School", a:"RM" },
-  { q:"They shipped our telemedicine platform with video, e-prescriptions, and an AI triage assistant. Patients in low-bandwidth areas finally have reliable access — no-shows dropped 60%.", n:"Dr. Sneha Kapoor", r:"Founder, LifeCare Clinic", a:"SK" },
-  { q:"We needed an internal SaaS to manage a 40-restaurant chain — POS sync, staff, and forecasting. Their team scoped it cleanly, shipped weekly, and the dashboards are now central to operations.", n:"Arjun Patel", r:"CEO, Spice Route Group", a:"AP" },
-  { q:"Our LMS now runs live classes, fee management, parent comms, and an AI doubt-solver — all in one product. Enrollment doubled in three months and parent NPS is at 78.", n:"Priya Singh", r:"Director, BrightPath Academy", a:"PS" },
-  { q:"Their AI agent handles 70% of customer queries on day one — trained on our docs, integrated with our backend. Our support team now focuses on real edge cases instead of FAQs.", n:"Vikram Sharma", r:"Founder, ShopSwift", a:"VS" },
-  { q:"They built a rural-tech worker app that runs offline, syncs over 2G, and lets our field team log visits in Hindi. Coverage in three districts went up 3x in the first quarter.", n:"Kavita Joshi", r:"Director, Bihar Rural Education Trust", a:"KJ" },
-  { q:"From scratch to launch of our multi-tenant logistics SaaS in twelve weeks. Real-time tracking, billing, and a partner portal — order processing cut from 2 days to 2 hours.", n:"Rohit Gupta", r:"CEO, FreshMart Logistics", a:"RG" },
-  { q:"They built our doctor-consultation app with payments, video, and offline-first prescriptions. Patients across rural Bihar can now reach our specialists — and we have data to prove it.", n:"Dr. Amit Kumar", r:"Founder, MediConsult", a:"AK" },
-  { q:"Our property platform now uses LLM-powered search, automated lead qualification, and a buyer portal. Enquiries doubled and our sales team replies in minutes, not hours.", n:"Manish Agarwal", r:"Founder, Prime Properties Patna", a:"MA" },
-  { q:"They re-architected our hotel-group platform around a single data layer — bookings, channels, billing — and exposed it as an API. Direct bookings up 45%, OTA commissions cut in half.", n:"Sunita Kumari", r:"Director, Hotel Suvidha Group", a:"SU" },
-  { q:"Our compliance SaaS for 200+ CA clients — GST filings, document workflow, e-sign, and AI-driven anomaly checks. What used to be email chaos is now an audit-ready platform.", n:"CA Manoj Verma", r:"Founder, Verma & Associates", a:"MV" },
-  { q:"They delivered our membership SaaS with billing, attendance via QR, automated reminders, and a churn-prediction model. Member retention doubled in two quarters.", n:"Karan Singh", r:"Founder, FitZone Health Tech", a:"KS" },
-  { q:"They shipped our donation platform with UPI, cards, transparency reports, and an admin tool our volunteers actually understand. Donations are up 3x and we run a tighter ship.", n:"Anjali Verma", r:"Trustee, Asha Foundation", a:"AV" },
-  { q:"They built our B2B inventory and order-routing platform on top of a real data warehouse. Wholesale buyers self-serve, finance closes 4 days faster, ops finally trust the numbers.", n:"Suresh Yadav", r:"MD, Yadav Cottons Pvt Ltd", a:"SY" },
-  { q:"They built an AgriTech mobile app for our cooperative — Hindi-first, offline-capable, with AI advisory based on local weather and soil data. Adoption was unlike anything we've seen.", n:"Pooja Tiwari", r:"Program Lead, Kisan Mitra Initiative", a:"PT" },
+  { sector: 'EdTech', project: 'School management platform · 8-week build',
+    q: 'Admissions, attendance, fees, and a parent app — built and rolled out in 8 weeks. Students and faculty use it daily; admins finally have a single source of truth.' },
+  { sector: 'HealthTech', project: 'Telemedicine platform · AI triage',
+    q: 'Video consults, e-prescriptions, and an AI triage assistant tuned for low-bandwidth networks. Engineered to keep working when the connection does not.' },
+  { sector: 'F&B SaaS', project: 'Multi-outlet operations platform',
+    q: 'Internal SaaS for a 40-outlet chain — POS sync, staffing, and demand forecasting. Scoped weekly, shipped in milestones, and now central to daily operations.' },
+  { sector: 'EdTech', project: 'LMS with AI doubt-solver',
+    q: 'A learning platform with live classes, fee management, parent comms, and an AI doubt-solver — designed so a single coordinator can run a multi-branch institute end-to-end.' },
+  { sector: 'AI Tools', project: 'Customer-support AI agent',
+    q: 'A retrieval-augmented support agent trained on the client\'s docs and ticket history, integrated into their stack. Designed to handle the common 70% so the team can focus on the hard 30%.' },
+  { sector: 'Rural Tech', project: 'Field-worker app · offline-first',
+    q: 'A Hindi-first mobile app that runs offline, syncs over 2G, and lets community workers log visits and surveys in the field. Built for the conditions that real rural teams actually work in.' },
+  { sector: 'Logistics SaaS', project: 'Multi-tenant logistics platform',
+    q: 'A multi-tenant logistics SaaS with real-time tracking, billing, and a partner portal — engineered for self-serve onboarding and scale-out across regions.' },
+  { sector: 'HealthTech', project: 'Doctor consultation app',
+    q: 'A doctor-consultation app with secure payments, video, and offline-capable prescriptions, designed so specialists can reach patients in low-connectivity geographies.' },
+  { sector: 'Real Estate', project: 'AI-powered property platform',
+    q: 'A property listings platform with LLM-powered search, automated lead qualification, and a buyer portal — built so the sales team responds in minutes, not hours.' },
+  { sector: 'Hospitality', project: 'Unified data + booking platform',
+    q: 'Re-architected a hotel-group platform around a single data layer — bookings, channels, and billing exposed through one API. Designed to reduce dependence on third-party OTAs.' },
+  { sector: 'FinTech', project: 'Compliance SaaS for CA firms',
+    q: 'A multi-client compliance SaaS — GST filings, document workflow, e-sign, and AI-driven anomaly checks — built to be audit-ready end-to-end.' },
+  { sector: 'HealthTech SaaS', project: 'Membership platform with churn ML',
+    q: 'A membership SaaS with billing, QR-based attendance, automated reminders, and a churn-prediction model — designed so retention work is data-driven, not gut-driven.' },
+  { sector: 'Digital Inclusion', project: 'Donation platform for an NGO',
+    q: 'A donation platform with UPI and card support, transparency reports, and an admin tool simple enough for volunteers — built to make donor trust visible by design.' },
+  { sector: 'Data Platform', project: 'B2B inventory & analytics',
+    q: 'A B2B inventory and order-routing platform on a real data warehouse — wholesale buyers self-serve, finance closes faster, and ops finally trust the numbers.' },
+  { sector: 'AgriTech', project: 'Cooperative app · AI advisory',
+    q: 'A Hindi-first AgriTech mobile app for a farmer cooperative — offline-capable, with AI advisory based on local weather and soil data. Designed to be usable on the lowest-end Android device on the network.' },
 ];
 
 /* Industry icons used in the "Trusted by" strip */
@@ -858,9 +874,9 @@ const Testimonials = () => {
     <section className="block" id="customers">
       <div className="container">
         <div className="section-head reveal">
-          <div className="kicker">Portfolio</div>
-          <h2>Trusted across education, healthcare &amp; rural tech</h2>
-          <p>From schools and clinics to rural-tech and digital-inclusion projects — hear what our partners have to say.</p>
+          <div className="kicker">What we build</div>
+          <h2>A glimpse of recent work</h2>
+          <p>Anonymised snapshots from projects across education, healthcare, rural tech, and digital inclusion. Names withheld until we have explicit permission to share.</p>
         </div>
 
         <IndustriesStrip />
@@ -874,17 +890,15 @@ const Testimonials = () => {
         >
           <div className="tcarousel-track" ref={trackRef}>
             {cards.map((t, i) => (
-              <div className="tcarousel-card" key={`${t.n}-${i}`}>
-                <div className="stars" aria-label="5 out of 5 stars">
-                  {Array.from({length:5}).map((_,j) => <Icon key={j} name="star" size={15} stroke={0} fill="currentColor"/>)}
+              <div className="tcarousel-card case-card" key={`${t.sector}-${t.project}-${i}`}>
+                <div className="case-head">
+                  <span className="case-sector">{t.sector}</span>
+                  <span className="case-project">{t.project}</span>
                 </div>
-                <blockquote>"{t.q}"</blockquote>
-                <div className="who">
-                  <div className="avatar">{t.a}</div>
-                  <div>
-                    <div className="name">{t.n}</div>
-                    <div className="role">{t.r}</div>
-                  </div>
+                <p className="case-body">{t.q}</p>
+                <div className="case-foot">
+                  <span className="case-dot" aria-hidden="true"/>
+                  <span>Built by Gomarix</span>
                 </div>
               </div>
             ))}
